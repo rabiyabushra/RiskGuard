@@ -15,12 +15,12 @@ export const mapConfig = {
     '&copy; OpenStreetMap contributors'
 };
 
-// OpenStreetMap tile configuration
+// Public dark basemap configuration; no frontend API key is required.
 export const tileConfig = {
-  url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  url: 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
 
   attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    'Tiles &copy; <a href="https://www.esri.com/">Esri</a> &mdash; Data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 
   maxZoom: 19
 };

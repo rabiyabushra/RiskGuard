@@ -1,8 +1,8 @@
 // gis/maps/riskColors.js
 
 export const riskColors = {
-  low: "#22c55e",
-  medium: "#eab308",
-  high: "#f97316",
-  critical: "#ef4444"
+  low: "#2DBE63",
+  medium: "#E6B91E",
+  high: "#E87524",
+  critical: "#D93F3F"
 };
