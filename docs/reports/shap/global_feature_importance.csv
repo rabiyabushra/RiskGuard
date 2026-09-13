@@ -1,0 +1,98 @@
+feature,mean_abs_shap
+physical_progress,0.9760822
+planned_duration_days,0.52048606
+expenditure_ratio,0.33888677
+expenditure,0.1742137
+cost_overrun,0.15624131
+expenditure_to_original_ratio,0.10344945
+progress_to_expenditure_gap,0.09019204
+revised_cost,0.07884256
+total_road_length,0.07325812
+cost_overrun_percent,0.06420941
+sector_Water Resources,0.06225102
+original_cost,0.05742881
+sector_Power & Renewable Energy,0.04076042
+nh_density_per_1000sqkm,0.035492904
+power_requirement,0.032310903
+sector_Road Transport & Highways,0.031491153
+pop_per_high_court_judge,0.027883466
+road_density_per_1000sqkm,0.024583159
+avg_household_size,0.023245098
+case_clearance_rate_lower,0.019604769
+surfaced_road_ratio,0.01892131
+case_clearance_rate_hc,0.018591251
+rural_roads_length,0.016718978
+power_gap_percent,0.016530277
+sh_density_per_1000sqkm,0.013306951
+legal_pressure_index,0.012976406
+budget_per_capita_judiciary,0.012704745
+pop_per_lower_court_judge,0.012483573
+sector_Coal,0.01243706
+worker_rate,0.012300467
+state_highways_length,0.009106392
+surfaced_road_length,0.0082648
+power_availability,0.0073455316
+female_population_ratio,0.006774824
+installed_power_capacity,0.006763673
+power_gap,0.0066295713
+national_highways_length,0.0060734614
+literacy_rate,0.00567034
+district_roads_length,0.004467374
+sector_Railways,0.004072815
+courthall_shortfall_pct,0.0034022
+power_per_capita,0.0033397595
+non_worker_rate,0.0032101956
+road_length_per_1000pop,0.0020867938
+state_std_Punjab,0.0018354441
+has_cost_overrun,0.0017041602
+state_std_Uttarakhand,0.0011692712
+sector_Urban Development & Other,0.0011477517
+state_std_Karnataka,0.0011411766
+state_std_Telangana,0.00105929
+state_std_Multi-States,0.0009818145
+state_std_Tamil Nadu,0.00068497367
+state_std_Nagaland,0.00046810455
+population,0.00038964947
+households,0.00038425208
+female_population,0.0
+is_mega_project,0.0
+male_population,0.0
+sector_Telecommunications,0.0
+gujarat_private_total_cost_cr,0.0
+gujarat_private_project_count,0.0
+sector_Civil Aviation,0.0
+gujarat_private_avg_cost_sqft,0.0
+sector_Ports & Shipping,0.0
+sector_Petroleum & Natural Gas,0.0
+state_std_Chhattisgarh,0.0
+state_std_Bihar,0.0
+state_std_Assam,0.0
+state_std_Arunachal Pradesh,0.0
+state_std_Andhra Pradesh,0.0
+state_std_Andaman & Nicobar,0.0
+sector_Steel,0.0
+state_std_Dadra & Nagar Haveli And Daman & Diu,0.0
+state_std_Jharkhand,0.0
+state_std_Kerala,0.0
+state_std_Goa,0.0
+state_std_Delhi,0.0
+state_std_Haryana,0.0
+state_std_Himachal Pradesh,0.0
+state_std_Jammu & Kashmir,0.0
+state_std_Gujarat,0.0
+state_std_Mizoram,0.0
+state_std_Meghalaya,0.0
+state_std_Manipur,0.0
+state_std_Maharashtra,0.0
+state_std_Madhya Pradesh,0.0
+state_std_Ladakh,0.0
+state_std_Offshore,0.0
+state_std_Odisha,0.0
+state_std_Rajasthan,0.0
+state_std_Puducherry,0.0
+state_std_Pan India,0.0
+state_std_Sikkim,0.0
+state_std_Tripura,0.0
+state_std_Unknown,0.0
+state_std_Uttar Pradesh,0.0
+state_std_West Bengal,0.0

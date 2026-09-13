@@ -1,0 +1,3452 @@
+[
+  {
+    "project_id": "612786",
+    "project_name": "Construction of New Domestic Terminal Building Building and miscellaneous works including maintenance, operations and AICMC at Kadapa Airport",
+    "delay_probability": 0.8862,
+    "risk_score": 88.62,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": 1.1809,
+        "feature_value": -0.4636
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2935,
+        "feature_value": 0.2217
+      },
+      {
+        "feature": "avg_household_size",
+        "shap_value": 0.0657,
+        "feature_value": -1.6685
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": 0.0534,
+        "feature_value": -0.3087
+      },
+      {
+        "feature": "physical_progress",
+        "shap_value": 0.0533,
+        "feature_value": -0.0048
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1305,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "sector_Road Transport & Highways",
+        "shap_value": -0.044,
+        "feature_value": 0.0
+      },
+      {
+        "feature": "original_cost",
+        "shap_value": -0.04,
+        "feature_value": -0.3602
+      },
+      {
+        "feature": "cost_overrun_percent",
+        "shap_value": -0.032,
+        "feature_value": -0.1977
+      },
+      {
+        "feature": "sector_Water Resources",
+        "shap_value": -0.0287,
+        "feature_value": 0.0
+      }
+    ],
+    "narrative_explanations": [
+      "Planned Duration Days is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Avg Household Size is contributing toward higher predicted project delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk.",
+      "Sector: Road Transport & Highways is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "701107",
+    "project_name": "Construction of New Integrated Terminal Building and associated works including apron to park 3 code E type of aircraft or 6 code C type of aircraft at Vijayawada Airport.",
+    "delay_probability": 0.906,
+    "risk_score": 90.6,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": 0.8062,
+        "feature_value": 0.776
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.526,
+        "feature_value": 1.4445
+      },
+      {
+        "feature": "expenditure_to_original_ratio",
+        "shap_value": 0.2745,
+        "feature_value": 0.7805
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.1168,
+        "feature_value": -0.107
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0969,
+        "feature_value": -0.657
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1126,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.0643,
+        "feature_value": -0.4644
+      },
+      {
+        "feature": "original_cost",
+        "shap_value": -0.0515,
+        "feature_value": -0.2787
+      },
+      {
+        "feature": "sector_Water Resources",
+        "shap_value": -0.0278,
+        "feature_value": 0.0
+      },
+      {
+        "feature": "cost_overrun_percent",
+        "shap_value": -0.0251,
+        "feature_value": -0.1977
+      }
+    ],
+    "narrative_explanations": [
+      "Physical Progress is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure To Original Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk.",
+      "Planned Duration Days is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "701121",
+    "project_name": "Construction of New  Domestic Terminal Building  at Rajahmundry Airport.",
+    "delay_probability": 0.9482,
+    "risk_score": 94.82,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": 1.1533,
+        "feature_value": -0.4636
+      },
+      {
+        "feature": "physical_progress",
+        "shap_value": 0.829,
+        "feature_value": 0.7416
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2876,
+        "feature_value": 0.2933
+      },
+      {
+        "feature": "avg_household_size",
+        "shap_value": 0.0657,
+        "feature_value": -1.6685
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0612,
+        "feature_value": 0.1481
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1162,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "original_cost",
+        "shap_value": -0.0237,
+        "feature_value": -0.341
+      },
+      {
+        "feature": "cost_overrun_percent",
+        "shap_value": -0.0234,
+        "feature_value": -0.1977
+      },
+      {
+        "feature": "sector_Water Resources",
+        "shap_value": -0.0219,
+        "feature_value": 0.0
+      },
+      {
+        "feature": "case_clearance_rate_hc",
+        "shap_value": -0.0197,
+        "feature_value": -1.1661
+      }
+    ],
+    "narrative_explanations": [
+      "Planned Duration Days is strongly contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk.",
+      "Original Cost is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "706724",
+    "project_name": "Guwahati Airport New Integrated Terminal Building Construction Project",
+    "delay_probability": 0.7809,
+    "risk_score": 78.09,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": 1.2237,
+        "feature_value": 1.0573
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": 0.4831,
+        "feature_value": 0.2174
+      },
+      {
+        "feature": "expenditure_to_original_ratio",
+        "shap_value": 0.2348,
+        "feature_value": 2.0187
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.2342,
+        "feature_value": 0.3474
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.118,
+        "feature_value": 1.9831
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.8166,
+        "feature_value": 1.0379
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": -0.3191,
+        "feature_value": -0.9109
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": -0.1802,
+        "feature_value": 0.0818
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": -0.1307,
+        "feature_value": 0.666
+      },
+      {
+        "feature": "road_length_per_1000pop",
+        "shap_value": -0.0786,
+        "feature_value": 1.5249
+      }
+    ],
+    "narrative_explanations": [
+      "Physical Progress is strongly contributing toward higher predicted project delay risk.",
+      "Cost Overrun is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure To Original Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Progress To Expenditure Gap is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "612183",
+    "project_name": "Development of New Civil Enclave at Bihta",
+    "delay_probability": 0.198,
+    "risk_score": 19.8,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": 0.3028,
+        "feature_value": -0.4899
+      },
+      {
+        "feature": "case_clearance_rate_hc",
+        "shap_value": 0.0874,
+        "feature_value": 1.0919
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.085,
+        "feature_value": -0.6874
+      },
+      {
+        "feature": "power_gap_percent",
+        "shap_value": 0.0421,
+        "feature_value": -0.1336
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0403,
+        "feature_value": 0.0302
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.3451,
+        "feature_value": -1.6906
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": -0.5711,
+        "feature_value": -1.1332
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": -0.2147,
+        "feature_value": -0.2197
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1027,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "expenditure_to_original_ratio",
+        "shap_value": -0.0968,
+        "feature_value": -0.8018
+      }
+    ],
+    "narrative_explanations": [
+      "Planned Duration Days is strongly contributing toward higher predicted project delay risk.",
+      "Case Clearance Rate Hc is contributing toward higher predicted project delay risk.",
+      "Progress To Expenditure Gap is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Expenditure Ratio is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "612194",
+    "project_name": "Development of New Civil Enclave and associated works at Darbhanga Airport",
+    "delay_probability": 0.5868,
+    "risk_score": 58.68,
+    "risk_category": "MEDIUM",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2531,
+        "feature_value": 0.0223
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.0497,
+        "feature_value": -0.1444
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0367,
+        "feature_value": 0.0302
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": 0.0328,
+        "feature_value": -0.1968
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": 0.0293,
+        "feature_value": 0.7292
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.1946,
+        "feature_value": -0.4644
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.139,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "physical_progress",
+        "shap_value": -0.0781,
+        "feature_value": 0.0239
+      },
+      {
+        "feature": "pop_per_high_court_judge",
+        "shap_value": -0.0652,
+        "feature_value": 2.6175
+      },
+      {
+        "feature": "sector_Road Transport & Highways",
+        "shap_value": -0.0438,
+        "feature_value": 0.0
+      }
+    ],
+    "narrative_explanations": [
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure is contributing toward higher predicted project delay risk.",
+      "Total Road Length is contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is contributing toward lowering the predicted delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "701101",
+    "project_name": "Construction of New Domestic Terminal Building [Phase-I and II] and other allied structures at JPNI Airport, Patna",
+    "delay_probability": 0.7417,
+    "risk_score": 74.17,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": 1.3388,
+        "feature_value": 1.0872
+      },
+      {
+        "feature": "expenditure_to_original_ratio",
+        "shap_value": 0.2367,
+        "feature_value": 1.019
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.1685,
+        "feature_value": 0.0401
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0568,
+        "feature_value": -0.7198
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.049,
+        "feature_value": 0.0302
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -1.0273,
+        "feature_value": 1.2122
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1372,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "rural_roads_length",
+        "shap_value": -0.0785,
+        "feature_value": 0.5903
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": -0.0685,
+        "feature_value": -0.1439
+      },
+      {
+        "feature": "pop_per_high_court_judge",
+        "shap_value": -0.0533,
+        "feature_value": 2.6175
+      }
+    ],
+    "narrative_explanations": [
+      "Physical Progress is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure To Original Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure is contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "701105",
+    "project_name": "Goa Airport Terminal Building Extension Project",
+    "delay_probability": 0.9641,
+    "risk_score": 96.41,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": 1.3589,
+        "feature_value": 1.1363
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": 1.1107,
+        "feature_value": -0.4636
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2963,
+        "feature_value": 0.7097
+      },
+      {
+        "feature": "surfaced_road_length",
+        "shap_value": 0.0777,
+        "feature_value": -1.0651
+      },
+      {
+        "feature": "avg_household_size",
+        "shap_value": 0.0651,
+        "feature_value": -1.2366
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "original_cost",
+        "shap_value": -0.1136,
+        "feature_value": -0.3626
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1048,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": -0.0786,
+        "feature_value": -0.3104
+      },
+      {
+        "feature": "pop_per_lower_court_judge",
+        "shap_value": -0.0223,
+        "feature_value": -1.7789
+      },
+      {
+        "feature": "sector_Water Resources",
+        "shap_value": -0.0214,
+        "feature_value": 0.0
+      }
+    ],
+    "narrative_explanations": [
+      "Physical Progress is strongly contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Original Cost is contributing toward lowering the predicted delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "619054",
+    "project_name": "Development of Keshod Airport.",
+    "delay_probability": 0.4883,
+    "risk_score": 48.83,
+    "risk_category": "MEDIUM",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": 0.7714,
+        "feature_value": -0.6132
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.3108,
+        "feature_value": -0.4153
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": 0.0897,
+        "feature_value": -0.2918
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0438,
+        "feature_value": -0.2774
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0317,
+        "feature_value": -0.5898
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.1181,
+        "feature_value": -0.9235
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": -0.1785,
+        "feature_value": -0.2022
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1256,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": -0.1109,
+        "feature_value": -0.8617
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": -0.0617,
+        "feature_value": 1.079
+      }
+    ],
+    "narrative_explanations": [
+      "Planned Duration Days is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Revised Cost is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Expenditure is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "701126",
+    "project_name": "Development of Dholera International Greenfield Airport , Gujarat",
+    "delay_probability": 0.8071,
+    "risk_score": 80.71,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": 0.7926,
+        "feature_value": 0.598
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.288,
+        "feature_value": 0.5604
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": 0.1911,
+        "feature_value": -0.0021
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.1686,
+        "feature_value": -0.0303
+      },
+      {
+        "feature": "expenditure_to_original_ratio",
+        "shap_value": 0.1285,
+        "feature_value": 0.4357
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.3352,
+        "feature_value": 0.112
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": -0.1221,
+        "feature_value": -0.8617
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": -0.0784,
+        "feature_value": 1.079
+      },
+      {
+        "feature": "pop_per_high_court_judge",
+        "shap_value": -0.0605,
+        "feature_value": 0.8648
+      },
+      {
+        "feature": "surfaced_road_ratio",
+        "shap_value": -0.035,
+        "feature_value": 0.163
+      }
+    ],
+    "narrative_explanations": [
+      "Physical Progress is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Cost Overrun is contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Nh Density Per 1000Sqkm is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "611047",
+    "project_name": "Construction of NTB complex including apron, taxi track and other associated civil works and electrical & mechanical installations towards Tawi River side at CA Jammu.",
+    "delay_probability": 0.7113,
+    "risk_score": 71.13,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "road_density_per_1000sqkm",
+        "shap_value": 0.5624,
+        "feature_value": -1.0655
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2666,
+        "feature_value": -0.0345
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.2224,
+        "feature_value": -0.1522
+      },
+      {
+        "feature": "power_gap",
+        "shap_value": 0.0703,
+        "feature_value": 5.4212
+      },
+      {
+        "feature": "female_population_ratio",
+        "shap_value": 0.0458,
+        "feature_value": -1.6542
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -0.5416,
+        "feature_value": -0.3465
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1628,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.1604,
+        "feature_value": -0.3139
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": -0.0619,
+        "feature_value": -2.4388
+      },
+      {
+        "feature": "cost_overrun_percent",
+        "shap_value": -0.0342,
+        "feature_value": -0.1977
+      }
+    ],
+    "narrative_explanations": [
+      "Road Density Per 1000Sqkm is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure is strongly contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "612787",
+    "project_name": "Construction of New Domestic Terminal Building and Miscellaneous works at Hubli Airport",
+    "delay_probability": 0.9376,
+    "risk_score": 93.76,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": 1.1897,
+        "feature_value": -0.4636
+      },
+      {
+        "feature": "physical_progress",
+        "shap_value": 0.6767,
+        "feature_value": 0.354
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2838,
+        "feature_value": 0.189
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": 0.0516,
+        "feature_value": -0.2992
+      },
+      {
+        "feature": "budget_per_capita_judiciary",
+        "shap_value": 0.0391,
+        "feature_value": 0.6546
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1223,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": -0.035,
+        "feature_value": 0.1948
+      },
+      {
+        "feature": "cost_overrun_percent",
+        "shap_value": -0.0284,
+        "feature_value": -0.1977
+      },
+      {
+        "feature": "sector_Water Resources",
+        "shap_value": -0.0243,
+        "feature_value": 0.0
+      },
+      {
+        "feature": "sector_Road Transport & Highways",
+        "shap_value": -0.0181,
+        "feature_value": 0.0
+      }
+    ],
+    "narrative_explanations": [
+      "Planned Duration Days is strongly contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk.",
+      "Progress To Expenditure Gap is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "612788",
+    "project_name": "Construction of New Domestic Terminal Building and Miscellaneous Works at Belagavi Airport.",
+    "delay_probability": 0.9575,
+    "risk_score": 95.75,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": 1.1929,
+        "feature_value": -0.4636
+      },
+      {
+        "feature": "physical_progress",
+        "shap_value": 0.8173,
+        "feature_value": 0.6267
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.3551,
+        "feature_value": 0.7133
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0872,
+        "feature_value": -0.0536
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": 0.0516,
+        "feature_value": -0.2989
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1022,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "sector_Water Resources",
+        "shap_value": -0.0248,
+        "feature_value": 0.0
+      },
+      {
+        "feature": "cost_overrun_percent",
+        "shap_value": -0.0245,
+        "feature_value": -0.1977
+      },
+      {
+        "feature": "case_clearance_rate_hc",
+        "shap_value": -0.0142,
+        "feature_value": -0.658
+      },
+      {
+        "feature": "sector_Road Transport & Highways",
+        "shap_value": -0.0135,
+        "feature_value": 0.0
+      }
+    ],
+    "narrative_explanations": [
+      "Planned Duration Days is strongly contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk.",
+      "Sector: Water Resources is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "612789",
+    "project_name": "Development of additional RESA on either end on Runway 10-28  at Calicut Airport. Construction of embankment with slope protection, drainage system and associated works for additional RESA on either end on Runway 10-28",
+    "delay_probability": 0.8333,
+    "risk_score": 83.33,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": 0.6465,
+        "feature_value": -0.5894
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2432,
+        "feature_value": 0.1314
+      },
+      {
+        "feature": "pop_per_high_court_judge",
+        "shap_value": 0.0966,
+        "feature_value": -1.5082
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": 0.066,
+        "feature_value": -0.2708
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.0634,
+        "feature_value": -0.1767
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1209,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "physical_progress",
+        "shap_value": -0.0687,
+        "feature_value": -0.1484
+      },
+      {
+        "feature": "sector_Road Transport & Highways",
+        "shap_value": -0.0438,
+        "feature_value": 0.0
+      },
+      {
+        "feature": "cost_overrun_percent",
+        "shap_value": -0.0374,
+        "feature_value": -0.1977
+      },
+      {
+        "feature": "original_cost",
+        "shap_value": -0.0306,
+        "feature_value": -0.3087
+      }
+    ],
+    "narrative_explanations": [
+      "Planned Duration Days is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Pop Per High Court Judge is contributing toward higher predicted project delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk.",
+      "Physical Progress is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "400010",
+    "project_name": "Construction of Terminal Building & Associated works at Leh Airport, Ladakh",
+    "delay_probability": 0.886,
+    "risk_score": 88.6,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": 0.6877,
+        "feature_value": 0.532
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.3337,
+        "feature_value": 1.2291
+      },
+      {
+        "feature": "expenditure_to_original_ratio",
+        "shap_value": 0.2185,
+        "feature_value": 1.135
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": 0.191,
+        "feature_value": -0.0357
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.1021,
+        "feature_value": -0.1117
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.2736,
+        "feature_value": -0.1634
+      },
+      {
+        "feature": "original_cost",
+        "shap_value": -0.0475,
+        "feature_value": -0.3098
+      },
+      {
+        "feature": "sector_Water Resources",
+        "shap_value": -0.0312,
+        "feature_value": 0.0
+      },
+      {
+        "feature": "sector_Road Transport & Highways",
+        "shap_value": -0.0214,
+        "feature_value": 0.0
+      },
+      {
+        "feature": "avg_household_size",
+        "shap_value": -0.0199,
+        "feature_value": -0.0153
+      }
+    ],
+    "narrative_explanations": [
+      "Physical Progress is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure To Original Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Original Cost is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "706718",
+    "project_name": "C/o NITB Imphal Airport",
+    "delay_probability": 0.8789,
+    "risk_score": 87.89,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": 1.2285,
+        "feature_value": -0.4636
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.3577,
+        "feature_value": 0.0784
+      },
+      {
+        "feature": "pop_per_high_court_judge",
+        "shap_value": 0.0819,
+        "feature_value": -1.3562
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0666,
+        "feature_value": -0.4285
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.0662,
+        "feature_value": -0.1772
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -0.2673,
+        "feature_value": -0.3112
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1316,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "original_cost",
+        "shap_value": -0.0272,
+        "feature_value": -0.3053
+      },
+      {
+        "feature": "surfaced_road_ratio",
+        "shap_value": -0.0269,
+        "feature_value": -6.8385
+      },
+      {
+        "feature": "cost_overrun_percent",
+        "shap_value": -0.0256,
+        "feature_value": -0.1977
+      }
+    ],
+    "narrative_explanations": [
+      "Planned Duration Days is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Pop Per High Court Judge is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "611570",
+    "project_name": "SITC of ATM Automation System and ASMGCS [Including SMR & MLAT] for Mumbai, Navi Mumbai, Jewar [earlier MOPA, without ASMGCS], HIAL & BIAL",
+    "delay_probability": 0.7964,
+    "risk_score": 79.64,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": 0.6799,
+        "feature_value": 0.5119
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2963,
+        "feature_value": 1.1597
+      },
+      {
+        "feature": "expenditure_to_original_ratio",
+        "shap_value": 0.2191,
+        "feature_value": 0.6057
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0854,
+        "feature_value": -0.6511
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0519,
+        "feature_value": 0.077
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.3689,
+        "feature_value": -0.1881
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1562,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "original_cost",
+        "shap_value": -0.0475,
+        "feature_value": -0.3049
+      },
+      {
+        "feature": "cost_overrun_percent",
+        "shap_value": -0.0347,
+        "feature_value": -0.1977
+      },
+      {
+        "feature": "sector_Water Resources",
+        "shap_value": -0.0312,
+        "feature_value": 0.0
+      }
+    ],
+    "narrative_explanations": [
+      "Physical Progress is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure To Original Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "618977",
+    "project_name": "Development of New Greenfield Airport at Bundi, Kota Rajasthan.",
+    "delay_probability": 0.0582,
+    "risk_score": 5.82,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0392,
+        "feature_value": 0.1264
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0271,
+        "feature_value": -0.4653
+      },
+      {
+        "feature": "case_clearance_rate_lower",
+        "shap_value": 0.0188,
+        "feature_value": 0.4043
+      },
+      {
+        "feature": "legal_pressure_index",
+        "shap_value": 0.0093,
+        "feature_value": -0.1638
+      },
+      {
+        "feature": "sector_Coal",
+        "shap_value": 0.0041,
+        "feature_value": 0.0
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.5002,
+        "feature_value": -1.4402
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": -0.5275,
+        "feature_value": -1.0798
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.3766,
+        "feature_value": -0.4644
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": -0.2196,
+        "feature_value": -0.2138
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": -0.1108,
+        "feature_value": -1.1096
+      }
+    ],
+    "narrative_explanations": [
+      "Total Road Length is contributing toward higher predicted project delay risk.",
+      "Progress To Expenditure Gap is contributing toward higher predicted project delay risk.",
+      "Case Clearance Rate Lower is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Expenditure Ratio is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "701127",
+    "project_name": "Construction of New Passenger Terminal Building for Domestic Operations at Jodhpur Airport.",
+    "delay_probability": 0.8552,
+    "risk_score": 85.52,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": 1.5785,
+        "feature_value": 1.0674
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2672,
+        "feature_value": 0.9944
+      },
+      {
+        "feature": "expenditure_to_original_ratio",
+        "shap_value": 0.228,
+        "feature_value": 0.5042
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0488,
+        "feature_value": 0.1264
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": 0.0435,
+        "feature_value": -0.2716
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.3278,
+        "feature_value": -0.2136
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.148,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": -0.0798,
+        "feature_value": -1.1096
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": -0.0762,
+        "feature_value": 0.4843
+      },
+      {
+        "feature": "pop_per_high_court_judge",
+        "shap_value": -0.0426,
+        "feature_value": 1.717
+      }
+    ],
+    "narrative_explanations": [
+      "Physical Progress is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure To Original Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "701128",
+    "project_name": "Construction of New Integrated Passenger Terminal Building at Udaipur Airport",
+    "delay_probability": 0.6571,
+    "risk_score": 65.71,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.3537,
+        "feature_value": 0.6413
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": 0.2052,
+        "feature_value": -0.3649
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.1482,
+        "feature_value": -0.1069
+      },
+      {
+        "feature": "expenditure_to_original_ratio",
+        "shap_value": 0.0866,
+        "feature_value": 0.2874
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0463,
+        "feature_value": -0.5218
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1365,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": -0.1221,
+        "feature_value": -1.1096
+      },
+      {
+        "feature": "surfaced_road_ratio",
+        "shap_value": -0.0741,
+        "feature_value": 0.1607
+      },
+      {
+        "feature": "physical_progress",
+        "shap_value": -0.0732,
+        "feature_value": 0.1375
+      },
+      {
+        "feature": "pop_per_high_court_judge",
+        "shap_value": -0.0652,
+        "feature_value": 1.717
+      }
+    ],
+    "narrative_explanations": [
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure is contributing toward higher predicted project delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk.",
+      "Nh Density Per 1000Sqkm is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "612793",
+    "project_name": "Widening of basic strip at Western Side of Runway Chainage 80m to 920m i/c slope stabilization Measures [Balance work] of uphill and Improvement of Storm Water Drainage System at Pakyong Airport, Sikkim on design & build basis [EPC] with integrated 10 years maintenance.",
+    "delay_probability": 0.3385,
+    "risk_score": 33.85,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2108,
+        "feature_value": -0.3909
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0596,
+        "feature_value": -0.4368
+      },
+      {
+        "feature": "female_population_ratio",
+        "shap_value": 0.0458,
+        "feature_value": -1.6125
+      },
+      {
+        "feature": "pop_per_high_court_judge",
+        "shap_value": 0.0413,
+        "feature_value": -2.6309
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": 0.0398,
+        "feature_value": -0.2987
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.0892,
+        "feature_value": -0.7627
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.2926,
+        "feature_value": -0.3139
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1689,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": -0.1406,
+        "feature_value": -0.2037
+      },
+      {
+        "feature": "pop_per_lower_court_judge",
+        "shap_value": -0.0223,
+        "feature_value": -2.1433
+      }
+    ],
+    "narrative_explanations": [
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Progress To Expenditure Gap is contributing toward higher predicted project delay risk.",
+      "Female Population Ratio is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "611602",
+    "project_name": "Modernization of Chennai Airport, Phase II, Part 2",
+    "delay_probability": 0.787,
+    "risk_score": 78.7,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": 1.2702,
+        "feature_value": -0.4389
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.3329,
+        "feature_value": -0.4759
+      },
+      {
+        "feature": "avg_household_size",
+        "shap_value": 0.0821,
+        "feature_value": -1.9196
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0731,
+        "feature_value": -0.3026
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.064,
+        "feature_value": -0.1628
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -0.9259,
+        "feature_value": -0.7225
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1327,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": -0.0336,
+        "feature_value": 0.8432
+      },
+      {
+        "feature": "original_cost",
+        "shap_value": -0.027,
+        "feature_value": -0.1387
+      },
+      {
+        "feature": "cost_overrun_percent",
+        "shap_value": -0.0246,
+        "feature_value": -0.1977
+      }
+    ],
+    "narrative_explanations": [
+      "Planned Duration Days is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Avg Household Size is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "701113",
+    "project_name": "Development of Lal Bahadur Shastri International airport, Varanasi including C/o New Terminal Building, Apron Extension, Runway Extension, PTT and allied works.",
+    "delay_probability": 0.178,
+    "risk_score": 17.8,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "original_cost",
+        "shap_value": 0.22,
+        "feature_value": 0.2526
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.1005,
+        "feature_value": -0.1024
+      },
+      {
+        "feature": "worker_rate",
+        "shap_value": 0.0327,
+        "feature_value": -1.7618
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": 0.0145,
+        "feature_value": 0.1645
+      },
+      {
+        "feature": "surfaced_road_ratio",
+        "shap_value": 0.014,
+        "feature_value": 0.3502
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.252,
+        "feature_value": -1.0096
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.2656,
+        "feature_value": -0.1643
+      },
+      {
+        "feature": "expenditure_to_original_ratio",
+        "shap_value": -0.1196,
+        "feature_value": -0.4586
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.0995,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": -0.0954,
+        "feature_value": -0.574
+      }
+    ],
+    "narrative_explanations": [
+      "Original Cost is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure is contributing toward higher predicted project delay risk.",
+      "Worker Rate is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "701122",
+    "project_name": "Development of New Integrated Civil Enclave at Agra Airport",
+    "delay_probability": 0.3835,
+    "risk_score": 38.35,
+    "risk_category": "MEDIUM",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.4029,
+        "feature_value": -0.1374
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0491,
+        "feature_value": -0.5519
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": 0.0322,
+        "feature_value": -0.2544
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": 0.0228,
+        "feature_value": 0.1645
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.0171,
+        "feature_value": -0.1792
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -0.8908,
+        "feature_value": -0.6264
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.1171,
+        "feature_value": -0.4644
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1034,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": -0.0873,
+        "feature_value": 0.9418
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": -0.0501,
+        "feature_value": 1.3671
+      }
+    ],
+    "narrative_explanations": [
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Progress To Expenditure Gap is contributing toward higher predicted project delay risk.",
+      "Revised Cost is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Planned Duration Days is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "611495",
+    "project_name": "Development of New Civil Enclave at Bagdogra Airport",
+    "delay_probability": 0.2038,
+    "risk_score": 20.38,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "expenditure",
+        "shap_value": 0.1055,
+        "feature_value": -0.1257
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.064,
+        "feature_value": -0.2923
+      },
+      {
+        "feature": "worker_rate",
+        "shap_value": 0.0419,
+        "feature_value": -0.6534
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0402,
+        "feature_value": -0.0601
+      },
+      {
+        "feature": "avg_household_size",
+        "shap_value": 0.0378,
+        "feature_value": -0.7805
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.2992,
+        "feature_value": -1.1078
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": -0.4112,
+        "feature_value": -0.9243
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.2765,
+        "feature_value": -0.3156
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1586,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "sector_Railways",
+        "shap_value": -0.0429,
+        "feature_value": 0.0
+      }
+    ],
+    "narrative_explanations": [
+      "Expenditure is contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is contributing toward higher predicted project delay risk.",
+      "Worker Rate is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Progress To Expenditure Gap is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "612791",
+    "project_name": "Re-Construction of Rigid portions of Secondary Runway, K and  A Taxiway and Strengthening of C Taxiway at NSCBI Airport Kolkata.",
+    "delay_probability": 0.7983,
+    "risk_score": 79.83,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": 0.6422,
+        "feature_value": -0.5137
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.1988,
+        "feature_value": 0.0563
+      },
+      {
+        "feature": "avg_household_size",
+        "shap_value": 0.0579,
+        "feature_value": -0.7805
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": 0.0542,
+        "feature_value": -0.2978
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.044,
+        "feature_value": -0.1929
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1317,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "physical_progress",
+        "shap_value": -0.0883,
+        "feature_value": -0.0623
+      },
+      {
+        "feature": "sector_Road Transport & Highways",
+        "shap_value": -0.0438,
+        "feature_value": 0.0
+      },
+      {
+        "feature": "cost_overrun_percent",
+        "shap_value": -0.0294,
+        "feature_value": -0.1977
+      },
+      {
+        "feature": "sector_Water Resources",
+        "shap_value": -0.0233,
+        "feature_value": 0.0
+      }
+    ],
+    "narrative_explanations": [
+      "Planned Duration Days is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is contributing toward higher predicted project delay risk.",
+      "Avg Household Size is contributing toward higher predicted project delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk.",
+      "Physical Progress is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "615820",
+    "project_name": "TIKAK EXTENSION OCP",
+    "delay_probability": 0.5072,
+    "risk_score": 50.72,
+    "risk_category": "MEDIUM",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": 1.1498,
+        "feature_value": 0.8277
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.1935,
+        "feature_value": 0.6063
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": 0.0258,
+        "feature_value": 0.2402
+      },
+      {
+        "feature": "female_population_ratio",
+        "shap_value": 0.0247,
+        "feature_value": 0.3959
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.0195,
+        "feature_value": -1.2135
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.5969,
+        "feature_value": 1.6382
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": -0.3067,
+        "feature_value": -0.327
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": -0.1659,
+        "feature_value": -0.2012
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1362,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": -0.1234,
+        "feature_value": 0.666
+      }
+    ],
+    "narrative_explanations": [
+      "Physical Progress is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is contributing toward higher predicted project delay risk.",
+      "Nh Density Per 1000Sqkm is contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Revised Cost is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "615821",
+    "project_name": "TIRAP OCP",
+    "delay_probability": 0.1087,
+    "risk_score": 10.87,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "original_cost",
+        "shap_value": 0.0798,
+        "feature_value": -0.3546
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.0663,
+        "feature_value": -0.0427
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": 0.0655,
+        "feature_value": -0.3046
+      },
+      {
+        "feature": "expenditure_to_original_ratio",
+        "shap_value": 0.0313,
+        "feature_value": -0.1325
+      },
+      {
+        "feature": "power_gap_percent",
+        "shap_value": 0.0297,
+        "feature_value": 1.4381
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.2745,
+        "feature_value": -1.6297
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.7389,
+        "feature_value": 1.338
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": -0.3256,
+        "feature_value": -1.7671
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1348,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": -0.0921,
+        "feature_value": 0.666
+      }
+    ],
+    "narrative_explanations": [
+      "Original Cost is contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is contributing toward higher predicted project delay risk.",
+      "Revised Cost is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "400144",
+    "project_name": "PORDA CHIMTAPANI OCP [10 MTY]",
+    "delay_probability": 0.0626,
+    "risk_score": 6.26,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0387,
+        "feature_value": -1.1864
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0383,
+        "feature_value": -0.5371
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.0298,
+        "feature_value": -0.7552
+      },
+      {
+        "feature": "avg_household_size",
+        "shap_value": 0.0215,
+        "feature_value": -0.6984
+      },
+      {
+        "feature": "power_availability",
+        "shap_value": 0.0094,
+        "feature_value": -0.7517
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.3689,
+        "feature_value": -1.4299
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.7328,
+        "feature_value": 1.412
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": -0.3702,
+        "feature_value": -1.0006
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": -0.164,
+        "feature_value": 0.0455
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1119,
+        "feature_value": -0.0982
+      }
+    ],
+    "narrative_explanations": [
+      "Total Road Length is contributing toward higher predicted project delay risk.",
+      "Progress To Expenditure Gap is contributing toward higher predicted project delay risk.",
+      "Power Requirement is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "400149",
+    "project_name": "BAROUD OC EXPANSION [3.0-10.0M",
+    "delay_probability": 0.2451,
+    "risk_score": 24.51,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2302,
+        "feature_value": 0.1553
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.1652,
+        "feature_value": -0.0042
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0477,
+        "feature_value": -0.2981
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0351,
+        "feature_value": -1.1864
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.034,
+        "feature_value": -0.7552
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -1.0417,
+        "feature_value": 1.5123
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1683,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "physical_progress",
+        "shap_value": -0.1662,
+        "feature_value": -0.1211
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": -0.1413,
+        "feature_value": 0.0454
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": -0.1137,
+        "feature_value": -1.3507
+      }
+    ],
+    "narrative_explanations": [
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure is contributing toward higher predicted project delay risk.",
+      "Progress To Expenditure Gap is contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "400354",
+    "project_name": "DIPKA EXPANSION OCP [40 MTY]",
+    "delay_probability": 0.1366,
+    "risk_score": 13.66,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.3081,
+        "feature_value": 0.5319
+      },
+      {
+        "feature": "original_cost",
+        "shap_value": 0.2272,
+        "feature_value": 0.8109
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.2099,
+        "feature_value": 0.4136
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0387,
+        "feature_value": -1.1864
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.0237,
+        "feature_value": -0.7552
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -1.176,
+        "feature_value": 1.412
+      },
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.0659,
+        "feature_value": -0.6559
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": -0.2448,
+        "feature_value": -1.289
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1675,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": -0.0688,
+        "feature_value": 0.5533
+      }
+    ],
+    "narrative_explanations": [
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Original Cost is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure is strongly contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "400424",
+    "project_name": "GEVRA OC [70 MTY]",
+    "delay_probability": 0.7209,
+    "risk_score": 72.09,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "expenditure",
+        "shap_value": 0.726,
+        "feature_value": 1.288
+      },
+      {
+        "feature": "physical_progress",
+        "shap_value": 0.6223,
+        "feature_value": 0.5257
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2838,
+        "feature_value": 0.6233
+      },
+      {
+        "feature": "original_cost",
+        "shap_value": 0.2621,
+        "feature_value": 2.3583
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.1064,
+        "feature_value": -0.0713
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.9995,
+        "feature_value": 1.0371
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1507,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": -0.0996,
+        "feature_value": 1.6923
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": -0.0759,
+        "feature_value": -1.3507
+      },
+      {
+        "feature": "surfaced_road_ratio",
+        "shap_value": -0.0741,
+        "feature_value": -0.5237
+      }
+    ],
+    "narrative_explanations": [
+      "Expenditure is strongly contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "613798",
+    "project_name": "AMERA OC RCE [1.0 MTY]",
+    "delay_probability": 0.2165,
+    "risk_score": 21.65,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2735,
+        "feature_value": -0.329
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0651,
+        "feature_value": -0.2188
+      },
+      {
+        "feature": "original_cost",
+        "shap_value": 0.0425,
+        "feature_value": -0.3437
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0352,
+        "feature_value": -1.1864
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.034,
+        "feature_value": -0.7552
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -0.9131,
+        "feature_value": -0.5081
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.7219,
+        "feature_value": 2.2623
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1662,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": -0.0873,
+        "feature_value": -0.2015
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": -0.0776,
+        "feature_value": -1.3507
+      }
+    ],
+    "narrative_explanations": [
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Progress To Expenditure Gap is contributing toward higher predicted project delay risk.",
+      "Original Cost is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "613799",
+    "project_name": "AMGAON OC RCE [1.0 MTY]",
+    "delay_probability": 0.5683,
+    "risk_score": 56.83,
+    "risk_category": "MEDIUM",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": 0.5928,
+        "feature_value": 0.5366
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2319,
+        "feature_value": 0.6883
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0519,
+        "feature_value": -1.1864
+      },
+      {
+        "feature": "original_cost",
+        "shap_value": 0.0469,
+        "feature_value": -0.3483
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0426,
+        "feature_value": -0.1275
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.7057,
+        "feature_value": 2.1389
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1483,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": -0.1137,
+        "feature_value": -1.3507
+      },
+      {
+        "feature": "surfaced_road_ratio",
+        "shap_value": -0.0741,
+        "feature_value": -0.5237
+      },
+      {
+        "feature": "pop_per_high_court_judge",
+        "shap_value": -0.0647,
+        "feature_value": 0.2678
+      }
+    ],
+    "narrative_explanations": [
+      "Physical Progress is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Total Road Length is contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "613800",
+    "project_name": "JAGANNATHPUR OC RCE PROJECT",
+    "delay_probability": 0.8389,
+    "risk_score": 83.89,
+    "risk_category": "HIGH",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": 1.512,
+        "feature_value": 1.0329
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2527,
+        "feature_value": 0.6725
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": 0.2104,
+        "feature_value": -0.2751
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.049,
+        "feature_value": -1.1864
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0485,
+        "feature_value": 0.441
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.6903,
+        "feature_value": 1.5378
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1388,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": -0.0714,
+        "feature_value": -1.3507
+      },
+      {
+        "feature": "pop_per_high_court_judge",
+        "shap_value": -0.0426,
+        "feature_value": 0.2678
+      },
+      {
+        "feature": "sector_Coal",
+        "shap_value": -0.0394,
+        "feature_value": 1.0
+      }
+    ],
+    "narrative_explanations": [
+      "Physical Progress is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Revised Cost is strongly contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "613801",
+    "project_name": "MAHAMAYA OCP [1.50 MTY]",
+    "delay_probability": 0.3919,
+    "risk_score": 39.19,
+    "risk_category": "MEDIUM",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "revised_cost",
+        "shap_value": 0.2252,
+        "feature_value": -0.2836
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.212,
+        "feature_value": 0.2372
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0491,
+        "feature_value": -0.4274
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0351,
+        "feature_value": -1.1864
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.034,
+        "feature_value": -0.7552
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.6932,
+        "feature_value": 1.2879
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1642,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "physical_progress",
+        "shap_value": -0.1491,
+        "feature_value": -0.1599
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": -0.1137,
+        "feature_value": -1.3507
+      },
+      {
+        "feature": "surfaced_road_ratio",
+        "shap_value": -0.0741,
+        "feature_value": -0.5237
+      }
+    ],
+    "narrative_explanations": [
+      "Revised Cost is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Progress To Expenditure Gap is contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "615191",
+    "project_name": "KATKONA RO UG MINE",
+    "delay_probability": 0.0681,
+    "risk_score": 6.81,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "revised_cost",
+        "shap_value": 0.1029,
+        "feature_value": -0.2977
+      },
+      {
+        "feature": "original_cost",
+        "shap_value": 0.0424,
+        "feature_value": -0.3453
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0387,
+        "feature_value": -1.1864
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.0295,
+        "feature_value": -0.7552
+      },
+      {
+        "feature": "avg_household_size",
+        "shap_value": 0.016,
+        "feature_value": -0.6984
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.4126,
+        "feature_value": -1.6696
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.644,
+        "feature_value": 0.7863
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": -0.3263,
+        "feature_value": -1.2483
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": -0.1779,
+        "feature_value": -0.578
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.113,
+        "feature_value": -0.0982
+      }
+    ],
+    "narrative_explanations": [
+      "Revised Cost is contributing toward higher predicted project delay risk.",
+      "Original Cost is contributing toward higher predicted project delay risk.",
+      "Total Road Length is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "616234",
+    "project_name": "PELMA OC MDO",
+    "delay_probability": 0.0698,
+    "risk_score": 6.98,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.0369,
+        "feature_value": -0.7552
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0353,
+        "feature_value": -1.1864
+      },
+      {
+        "feature": "power_availability",
+        "shap_value": 0.0094,
+        "feature_value": -0.7517
+      },
+      {
+        "feature": "non_worker_rate",
+        "shap_value": 0.0076,
+        "feature_value": -1.4173
+      },
+      {
+        "feature": "national_highways_length",
+        "shap_value": 0.0057,
+        "feature_value": -0.7542
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.1234,
+        "feature_value": -0.5692
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.6631,
+        "feature_value": 2.0633
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": -0.5017,
+        "feature_value": -1.1202
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": -0.1384,
+        "feature_value": -0.2177
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1237,
+        "feature_value": -0.0982
+      }
+    ],
+    "narrative_explanations": [
+      "Power Requirement is contributing toward higher predicted project delay risk.",
+      "Total Road Length is contributing toward higher predicted project delay risk.",
+      "Power Availability is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "617287",
+    "project_name": "KUSMUNDA OC EXPANSION PROJECT",
+    "delay_probability": 0.2261,
+    "risk_score": 22.61,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "original_cost",
+        "shap_value": 0.2656,
+        "feature_value": 0.6403
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.1376,
+        "feature_value": -0.0429
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0421,
+        "feature_value": -1.1864
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.034,
+        "feature_value": -0.7552
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0302,
+        "feature_value": -0.6088
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.2786,
+        "feature_value": -1.1164
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.2297,
+        "feature_value": 0.5355
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1175,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "expenditure_to_original_ratio",
+        "shap_value": -0.0951,
+        "feature_value": -0.4752
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": -0.0783,
+        "feature_value": -0.6012
+      }
+    ],
+    "narrative_explanations": [
+      "Original Cost is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure is contributing toward higher predicted project delay risk.",
+      "Total Road Length is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "617288",
+    "project_name": "MANIKPUR OC EXPANSION PROJECT",
+    "delay_probability": 0.1095,
+    "risk_score": 10.95,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.1056,
+        "feature_value": -0.2291
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": 0.0608,
+        "feature_value": -0.2884
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0387,
+        "feature_value": -1.1864
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.0295,
+        "feature_value": -0.7552
+      },
+      {
+        "feature": "expenditure_to_original_ratio",
+        "shap_value": 0.0198,
+        "feature_value": -0.2469
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.2278,
+        "feature_value": -1.1161
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": -0.4712,
+        "feature_value": -1.0
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.4481,
+        "feature_value": 0.1852
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.152,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": -0.1029,
+        "feature_value": -1.3507
+      }
+    ],
+    "narrative_explanations": [
+      "Expenditure Ratio is contributing toward higher predicted project delay risk.",
+      "Revised Cost is contributing toward higher predicted project delay risk.",
+      "Total Road Length is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Progress To Expenditure Gap is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "619171",
+    "project_name": "RPR FOR DURGAPUR OCP 10 MTY",
+    "delay_probability": 0.04,
+    "risk_score": 4.0,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0567,
+        "feature_value": -0.7137
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0387,
+        "feature_value": -1.1864
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.0298,
+        "feature_value": -0.7552
+      },
+      {
+        "feature": "national_highways_length",
+        "shap_value": 0.0123,
+        "feature_value": -0.7542
+      },
+      {
+        "feature": "power_availability",
+        "shap_value": 0.0094,
+        "feature_value": -0.7517
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.532,
+        "feature_value": -1.727
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.7114,
+        "feature_value": 0.8866
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": -0.5294,
+        "feature_value": -1.1468
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": -0.2096,
+        "feature_value": 0.0638
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": -0.1168,
+        "feature_value": -0.2209
+      }
+    ],
+    "narrative_explanations": [
+      "Progress To Expenditure Gap is contributing toward higher predicted project delay risk.",
+      "Total Road Length is contributing toward higher predicted project delay risk.",
+      "Power Requirement is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "619172",
+    "project_name": "MADANNAGAR OCP 12 MTY - MDO",
+    "delay_probability": 0.0664,
+    "risk_score": 6.64,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0568,
+        "feature_value": -0.7118
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0387,
+        "feature_value": -1.1864
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.0298,
+        "feature_value": -0.7552
+      },
+      {
+        "feature": "national_highways_length",
+        "shap_value": 0.0123,
+        "feature_value": -0.7542
+      },
+      {
+        "feature": "power_availability",
+        "shap_value": 0.0094,
+        "feature_value": -0.7517
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.6379,
+        "feature_value": -1.7273
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": -0.4676,
+        "feature_value": -1.1489
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.2984,
+        "feature_value": 0.2107
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": -0.1242,
+        "feature_value": -0.2213
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1124,
+        "feature_value": -0.0982
+      }
+    ],
+    "narrative_explanations": [
+      "Progress To Expenditure Gap is contributing toward higher predicted project delay risk.",
+      "Total Road Length is contributing toward higher predicted project delay risk.",
+      "Power Requirement is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Expenditure Ratio is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "400018",
+    "project_name": "HURA C OCP",
+    "delay_probability": 0.3578,
+    "risk_score": 35.78,
+    "risk_category": "MEDIUM",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.224,
+        "feature_value": 0.4577
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.0769,
+        "feature_value": -0.1219
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.0559,
+        "feature_value": -0.3842
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.035,
+        "feature_value": -1.3365
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.0282,
+        "feature_value": -1.219
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.9279,
+        "feature_value": 0.9121
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1654,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "physical_progress",
+        "shap_value": -0.0858,
+        "feature_value": 0.0876
+      },
+      {
+        "feature": "sector_Coal",
+        "shap_value": -0.0755,
+        "feature_value": 1.0
+      },
+      {
+        "feature": "sector_Road Transport & Highways",
+        "shap_value": -0.0524,
+        "feature_value": 0.0
+      }
+    ],
+    "narrative_explanations": [
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure is contributing toward higher predicted project delay risk.",
+      "Progress To Expenditure Gap is contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "400073",
+    "project_name": "KONAR EXPANSION OCP",
+    "delay_probability": 0.2242,
+    "risk_score": 22.42,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2531,
+        "feature_value": 0.4809
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.064,
+        "feature_value": -0.1275
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0348,
+        "feature_value": -1.3365
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": 0.0241,
+        "feature_value": -0.2162
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.0237,
+        "feature_value": -1.219
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.8536,
+        "feature_value": 1.9876
+      },
+      {
+        "feature": "physical_progress",
+        "shap_value": -0.4459,
+        "feature_value": -0.3996
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": -0.3666,
+        "feature_value": -0.9503
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.17,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "sector_Coal",
+        "shap_value": -0.0755,
+        "feature_value": 1.0
+      }
+    ],
+    "narrative_explanations": [
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure is contributing toward higher predicted project delay risk.",
+      "Total Road Length is contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "400074",
+    "project_name": "KARO EXPANSION OCP",
+    "delay_probability": 0.0808,
+    "risk_score": 8.08,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.1122,
+        "feature_value": -0.2017
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0386,
+        "feature_value": -1.3365
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.0295,
+        "feature_value": -1.219
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": 0.0188,
+        "feature_value": -0.2832
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.0182,
+        "feature_value": -0.1593
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.2553,
+        "feature_value": -1.0848
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.928,
+        "feature_value": 1.0864
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": -0.4616,
+        "feature_value": -0.9941
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1519,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "sector_Coal",
+        "shap_value": -0.0755,
+        "feature_value": 1.0
+      }
+    ],
+    "narrative_explanations": [
+      "Expenditure Ratio is contributing toward higher predicted project delay risk.",
+      "Total Road Length is contributing toward higher predicted project delay risk.",
+      "Power Requirement is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "400136",
+    "project_name": "SANGHMITRA OC",
+    "delay_probability": 0.0602,
+    "risk_score": 6.02,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0386,
+        "feature_value": -1.3365
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.0298,
+        "feature_value": -1.219
+      },
+      {
+        "feature": "case_clearance_rate_lower",
+        "shap_value": 0.0176,
+        "feature_value": 0.4043
+      },
+      {
+        "feature": "state_highways_length",
+        "shap_value": 0.0116,
+        "feature_value": -0.9528
+      },
+      {
+        "feature": "nh_density_per_1000sqkm",
+        "shap_value": 0.0106,
+        "feature_value": -0.2832
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.2044,
+        "feature_value": -1.2473
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.7478,
+        "feature_value": 1.338
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": -0.5934,
+        "feature_value": -1.1389
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": -0.1513,
+        "feature_value": 0.1061
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": -0.1295,
+        "feature_value": -0.2193
+      }
+    ],
+    "narrative_explanations": [
+      "Total Road Length is contributing toward higher predicted project delay risk.",
+      "Power Requirement is contributing toward higher predicted project delay risk.",
+      "Case Clearance Rate Lower is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "400138",
+    "project_name": "CHANDRAGUPT OCP",
+    "delay_probability": 0.1712,
+    "risk_score": 17.12,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.2928,
+        "feature_value": 0.2239
+      },
+      {
+        "feature": "expenditure_to_original_ratio",
+        "shap_value": 0.0756,
+        "feature_value": 0.0312
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.0654,
+        "feature_value": -0.125
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0386,
+        "feature_value": -1.3365
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.0295,
+        "feature_value": -1.219
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.2379,
+        "feature_value": -1.0168
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.6558,
+        "feature_value": 2.4136
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": -0.1591,
+        "feature_value": -1.3662
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1518,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "sector_Coal",
+        "shap_value": -0.0755,
+        "feature_value": 1.0
+      }
+    ],
+    "narrative_explanations": [
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure To Original Ratio is contributing toward higher predicted project delay risk.",
+      "Expenditure is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "400139",
+    "project_name": "KOTRE BASANTPUR PACHMO OCP",
+    "delay_probability": 0.2765,
+    "risk_score": 27.65,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.3339,
+        "feature_value": 1.104
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": 0.1865,
+        "feature_value": -0.1903
+      },
+      {
+        "feature": "state_highways_length",
+        "shap_value": 0.0718,
+        "feature_value": -0.9528
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.0527,
+        "feature_value": -0.1198
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.038,
+        "feature_value": -1.3365
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": -0.9357,
+        "feature_value": -0.49
+      },
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -0.7255,
+        "feature_value": 2.4136
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": -0.1863,
+        "feature_value": -1.7064
+      },
+      {
+        "feature": "cost_overrun_percent",
+        "shap_value": -0.1006,
+        "feature_value": -0.8618
+      },
+      {
+        "feature": "sector_Coal",
+        "shap_value": -0.0755,
+        "feature_value": 1.0
+      }
+    ],
+    "narrative_explanations": [
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Cost Overrun is contributing toward higher predicted project delay risk.",
+      "State Highways Length is contributing toward higher predicted project delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "400142",
+    "project_name": "Pachwara South Coal Block",
+    "delay_probability": 0.5135,
+    "risk_score": 51.35,
+    "risk_category": "MEDIUM",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "physical_progress",
+        "shap_value": 0.6922,
+        "feature_value": 0.7703
+      },
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.257,
+        "feature_value": 0.6452
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.1765,
+        "feature_value": 0.0687
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0518,
+        "feature_value": -1.3365
+      },
+      {
+        "feature": "power_requirement",
+        "shap_value": 0.0353,
+        "feature_value": -1.219
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -1.0912,
+        "feature_value": 1.5888
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1518,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": -0.1404,
+        "feature_value": 0.0338
+      },
+      {
+        "feature": "sector_Coal",
+        "shap_value": -0.0619,
+        "feature_value": 1.0
+      },
+      {
+        "feature": "original_cost",
+        "shap_value": -0.0613,
+        "feature_value": 0.1051
+      }
+    ],
+    "narrative_explanations": [
+      "Physical Progress is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure is contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Cost Overrun is contributing toward lowering the predicted delay risk."
+    ]
+  },
+  {
+    "project_id": "400150",
+    "project_name": "RPR MAGADH EXP OCP",
+    "delay_probability": 0.1569,
+    "risk_score": 15.69,
+    "risk_category": "LOW",
+    "base_value": 0.48,
+    "top_risk_increasing_factors": [
+      {
+        "feature": "expenditure_ratio",
+        "shap_value": 0.3111,
+        "feature_value": -0.4385
+      },
+      {
+        "feature": "expenditure",
+        "shap_value": 0.1631,
+        "feature_value": 0.1503
+      },
+      {
+        "feature": "original_cost",
+        "shap_value": 0.1189,
+        "feature_value": 1.2846
+      },
+      {
+        "feature": "progress_to_expenditure_gap",
+        "shap_value": 0.06,
+        "feature_value": -0.2189
+      },
+      {
+        "feature": "total_road_length",
+        "shap_value": 0.0386,
+        "feature_value": -1.3365
+      }
+    ],
+    "top_risk_reducing_factors": [
+      {
+        "feature": "planned_duration_days",
+        "shap_value": -1.137,
+        "feature_value": 1.2122
+      },
+      {
+        "feature": "physical_progress",
+        "shap_value": -1.1198,
+        "feature_value": -0.6117
+      },
+      {
+        "feature": "cost_overrun",
+        "shap_value": -0.1691,
+        "feature_value": -0.0982
+      },
+      {
+        "feature": "revised_cost",
+        "shap_value": -0.1312,
+        "feature_value": 0.902
+      },
+      {
+        "feature": "sh_density_per_1000sqkm",
+        "shap_value": -0.1005,
+        "feature_value": -1.1643
+      }
+    ],
+    "narrative_explanations": [
+      "Expenditure Ratio is strongly contributing toward higher predicted project delay risk.",
+      "Expenditure is contributing toward higher predicted project delay risk.",
+      "Original Cost is contributing toward higher predicted project delay risk.",
+      "Planned Duration Days is strongly contributing toward lowering the predicted delay risk.",
+      "Physical Progress is strongly contributing toward lowering the predicted delay risk."
+    ]
+  }
+]
