@@ -13,6 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
 import os
+import google.generativeai as genai
 
 from database import connect_to_mongo, close_mongo_connection, get_database
 
@@ -132,23 +133,33 @@ async def predict_delay(project: Project):
 
 
 # ---------------------------------------------------------
-# Placeholder for Gemini recommendation endpoint
+# Gemini recommendation endpoint
 # ---------------------------------------------------------
 @app.post("/recommendations")
 async def get_recommendations(project: Project):
     """
-    Placeholder endpoint: will eventually call the Gemini API with
-    project details + risk factors (from SHAP) to generate recommendations.
+    Calls the Gemini API with project details to generate a
+    plain-English recommendation to reduce delay risk.
     """
     gemini_api_key = os.getenv("GEMINI_API_KEY")
     if not gemini_api_key:
         return {
             "note": "GEMINI_API_KEY not set yet. Add it to your .env file to enable real recommendations.",
-            "dummy_recommendation": (
-                f"For project '{project.name}', consider expediting land acquisition "
-                "clearances and monitoring legal disputes closely to reduce delay risk."
-            ),
         }
 
-    # TODO: Implement real Gemini API call here once key is available
-    return {"note": "Gemini integration not yet implemented."}
+    genai.configure(api_key=gemini_api_key)
+    model = genai.GenerativeModel("gemini-3.6-flash")
+
+    prompt = (
+        f"You are an infrastructure project risk advisor. "
+        f"Project name: {project.name}. Sector: {project.sector}. "
+        f"State: {project.state}. District: {project.district}. "
+        f"Give 2-3 short, actionable recommendations to reduce the risk of delay "
+        f"for this project, in plain language."
+    )
+
+    try:
+        response = model.generate_content(prompt)
+        return {"project_name": project.name, "recommendation": response.text}
+    except Exception as e:
+        return {"error": f"Gemini API call failed: {str(e)}"}
