@@ -167,5 +167,5 @@ def train_and_evaluate_models(base_dir: str):
     return metadata
 
 if __name__ == "__main__":
-    BASE = r"c:\Users\RABIYA BUSHRA\OneDrive\Attachments\Desktop\SIH\Implementation\RiskGuard"
+    BASE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
     train_and_evaluate_models(BASE)

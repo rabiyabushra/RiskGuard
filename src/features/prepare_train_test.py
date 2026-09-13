@@ -96,7 +96,7 @@ def prepare_train_test_data(master_csv_path: str, output_dir: str, models_dir: s
     print("=" * 60)
 
 if __name__ == "__main__":
-    BASE = r"c:\Users\RABIYA BUSHRA\OneDrive\Attachments\Desktop\SIH\Implementation\RiskGuard"
+    BASE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
     master_csv = os.path.join(BASE, "data", "processed", "master", "riskguard_master.csv")
     out_master = os.path.join(BASE, "data", "processed", "master")
     models_dir = os.path.join(BASE, "models")

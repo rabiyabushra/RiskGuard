@@ -302,5 +302,5 @@ def run_shap_pipeline(base_dir: str):
     print("=" * 60)
 
 if __name__ == "__main__":
-    BASE = r"c:\Users\RABIYA BUSHRA\OneDrive\Attachments\Desktop\SIH\Implementation\RiskGuard"
+    BASE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
     run_shap_pipeline(BASE)

@@ -195,5 +195,5 @@ All models were tuned via 5-fold cross-validation exclusively on the training pa
     print("=" * 60)
 
 if __name__ == "__main__":
-    BASE = r"c:\Users\RABIYA BUSHRA\OneDrive\Attachments\Desktop\SIH\Implementation\RiskGuard"
+    BASE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
     evaluate_all_models(BASE)
