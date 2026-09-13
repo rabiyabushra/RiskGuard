@@ -38,9 +38,45 @@ def get_project_shap_explanation(project_id: str) -> Optional[Dict[str, Any]]:
         match = df_pred[df_pred["project_id"] == pid_str]
         if not match.empty:
             record = match.iloc[0].to_dict()
-            return compute_live_shap_explanation(record)
+            try:
+                return compute_live_shap_explanation(record)
+            except FileNotFoundError:
+                return _build_precomputed_explanation(record)
 
     return None
+
+
+def _build_precomputed_explanation(record: Dict[str, Any]) -> Dict[str, Any]:
+    """Build a valid explanation when live model artifacts are unavailable."""
+    increasing_factors = []
+    for rank in range(1, 4):
+        feature = record.get(f"top_risk_factor_{rank}")
+        if feature and str(feature).lower() != "nan":
+            value = record.get(feature)
+            try:
+                value = float(value)
+            except (TypeError, ValueError):
+                value = None
+            increasing_factors.append({
+                "feature": str(feature),
+                "shap_value": 0.0,
+                "feature_value": value
+            })
+
+    return {
+        "project_id": str(record.get("project_id", "")),
+        "project_name": str(record.get("project_name", "Infrastructure Project")),
+        "delay_probability": float(record.get("delay_probability", 0.0)),
+        "risk_score": float(record.get("risk_score", 0.0)),
+        "risk_category": str(record.get("risk_category", "MEDIUM")),
+        "base_value": 0.0,
+        "top_risk_increasing_factors": increasing_factors,
+        "top_risk_reducing_factors": [],
+        "narrative_explanations": [
+            "Live SHAP values are unavailable because the trained model artifacts are not installed.",
+            "The factors shown are the risk drivers stored with the precomputed project prediction."
+        ]
+    }
 
 
 def compute_live_shap_explanation(project_data: Dict[str, Any], top_n: int = 5) -> Dict[str, Any]:

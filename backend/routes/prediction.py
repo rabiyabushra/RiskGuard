@@ -48,5 +48,7 @@ async def predict_project_delay(payload: ProjectInputSchema, background_tasks: B
         # Asynchronously persist prediction to MongoDB
         background_tasks.add_task(persist_prediction, result)
         return result
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Inference pipeline execution error: {str(e)}")
+    except FileNotFoundError:
+        raise HTTPException(status_code=503, detail="Prediction service is unavailable because model artifacts are missing.")
+    except Exception:
+        raise HTTPException(status_code=500, detail="Inference pipeline execution failed.")

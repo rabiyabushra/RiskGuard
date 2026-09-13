@@ -140,7 +140,7 @@ def generate_gemini_recommendations(
             "recommendations": fallback_recs,
             "model_used": "domain-heuristic-fallback",
             "status": "error_fallback",
-            "notes": f"Gemini API request failed ({str(e)}). Returned domain heuristic recommendations."
+              "notes": "Gemini API request failed. Returned domain heuristic recommendations."
         }
 
 

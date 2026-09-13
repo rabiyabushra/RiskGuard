@@ -46,5 +46,5 @@ async def analyze_project_risk(payload: ProjectInputSchema):
             },
             "top_risk_factors": []
         }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Failed to calculate risk analysis: {str(e)}")
+    except Exception:
+        raise HTTPException(status_code=500, detail="Failed to calculate risk analysis.")

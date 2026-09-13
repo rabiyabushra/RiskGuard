@@ -45,5 +45,7 @@ async def explain_custom_project(payload: ProjectInputSchema, top_n: int = 5):
         data = payload.model_dump(exclude_none=True)
         explanation = compute_live_shap_explanation(data, top_n=top_n)
         return explanation
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Failed to generate SHAP explanation: {str(e)}")
+    except FileNotFoundError:
+        raise HTTPException(status_code=503, detail="Explainability service is unavailable because model artifacts are missing.")
+    except Exception:
+        raise HTTPException(status_code=500, detail="Failed to generate SHAP explanation.")
