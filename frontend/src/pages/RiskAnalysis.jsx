@@ -74,11 +74,11 @@ export default function RiskAnalysis() {
         sector: simForm.sector,
         state: simForm.state,
         agency: simForm.agency,
-        cost_original: parseFloat(simForm.cost_original) || 1000,
-        cost_revised: parseFloat(simForm.cost_revised) || 1200,
+        original_cost: parseFloat(simForm.cost_original) || 1000,
+        revised_cost: parseFloat(simForm.cost_revised) || 1200,
         physical_progress: parseFloat(simForm.physical_progress) || 30,
-        cumulative_expenditure: parseFloat(simForm.expenditure) || 400,
-        delay_months: parseInt(simForm.delay_months) || 12,
+        expenditure: parseFloat(simForm.expenditure) || 400,
+        planned_duration_days: Math.max(1, (parseInt(simForm.delay_months) || 12) * 30),
       };
 
       const predRes = await api.predictDelay(predPayload);
@@ -93,8 +93,8 @@ export default function RiskAnalysis() {
           sector: simForm.sector,
           delay_probability: predRes.delay_probability,
           risk_category: predRes.risk_category,
-          cost_revised: predPayload.cost_revised,
-          cost_original: predPayload.cost_original,
+          revised_cost: predPayload.revised_cost,
+          original_cost: predPayload.original_cost,
           physical_progress: predPayload.physical_progress,
         });
         setSimRecommendations(recRes.recommendations || recRes);
@@ -111,15 +111,7 @@ export default function RiskAnalysis() {
   };
 
   // Prepare Global SHAP chart data
-  const chartData = (globalShap?.top_features || [
-    { feature: 'physical_progress', mean_abs_shap: 0.38, importance: 0.38 },
-    { feature: 'cost_overrun_ratio', mean_abs_shap: 0.31, importance: 0.31 },
-    { feature: 'expenditure_ratio', mean_abs_shap: 0.24, importance: 0.24 },
-    { feature: 'state_risk_index', mean_abs_shap: 0.19, importance: 0.19 },
-    { feature: 'sector_delay_rate', mean_abs_shap: 0.16, importance: 0.16 },
-    { feature: 'cost_original_log', mean_abs_shap: 0.12, importance: 0.12 },
-    { feature: 'court_case_density', mean_abs_shap: 0.09, importance: 0.09 },
-  ]).map(f => ({
+  const chartData = (Array.isArray(globalShap) ? globalShap : []).map(f => ({
     name: (f.feature || f.name || '').replace(/_/g, ' '),
     importance: parseFloat(f.mean_abs_shap || f.importance || f.value || 0)
   }));
@@ -413,7 +405,7 @@ export default function RiskAnalysis() {
                 </h4>
                 <RecommendationCard
                   projectId="SIMULATED"
-                  initialRecommendations={simRecommendations}
+                  recommendations={simRecommendations}
                   riskLevel={simResult.risk_category}
                 />
               </div>

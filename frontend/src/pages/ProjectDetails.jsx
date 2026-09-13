@@ -55,7 +55,7 @@ export default function ProjectDetails() {
 
         // 3. Fetch Gemini Recommendations in parallel
         try {
-          const recRes = await api.getRecommendations(projectId);
+          const recRes = await api.getProjectRecommendations(projectId);
           if (isMounted) {
             setRecommendations(recRes.recommendations || recRes);
           }
@@ -109,15 +109,12 @@ export default function ProjectDetails() {
   }
 
   // Calculate financial variance
-  const costOrig = Number(project.cost_original || 0);
-  const costRev = Number(project.cost_revised || costOrig);
+  const costOrig = Number(project.original_cost || 0);
+  const costRev = Number(project.revised_cost || costOrig);
   const costOverrun = costOrig > 0 ? ((costRev - costOrig) / costOrig) * 100 : 0;
   const progress = Number(project.physical_progress || 0);
   const delayProb = Number(project.delay_probability || 0) * 100;
   const riskScore = Number(project.risk_score || 50).toFixed(1);
-
-  // Extract SHAP features
-  const shapFeatures = shapData?.top_features || shapData?.features || [];
 
   return (
     <div className="space-y-8 pb-16 max-w-7xl mx-auto">
@@ -160,9 +157,9 @@ export default function ProjectDetails() {
 
             <p className="text-xs text-slate-400 flex items-center space-x-2">
               <Calendar className="w-3.5 h-3.5 text-slate-500" />
-              <span>Original Commissioning: <strong className="text-slate-300">{project.date_original_commissioning || project.date_orig_comm || 'Not specified'}</strong></span>
+              <span>Original Commissioning: <strong className="text-slate-300">{project.date_of_approval || 'Not specified'}</strong></span>
               <span className="text-slate-600">•</span>
-              <span>Anticipated Completion: <strong className="text-slate-300">{project.date_anticipated || project.date_anticip || 'Under Review'}</strong></span>
+              <span>Anticipated Completion: <strong className="text-slate-300">{project.original_completion_date || project.revised_completion_date || 'Under Review'}</strong></span>
             </p>
           </div>
 
@@ -226,7 +223,7 @@ export default function ProjectDetails() {
             </span>
             <div className="mt-2 flex items-baseline justify-between">
               <span className="text-lg font-bold font-mono text-slate-200">
-                {formatCurrency(project.cumulative_expenditure || project.expenditure || 0)}
+                {formatCurrency(project.expenditure || 0)}
               </span>
             </div>
             <span className="text-[11px] text-slate-500 mt-1 block">
@@ -265,9 +262,8 @@ export default function ProjectDetails() {
           </p>
 
           <SHAPChart
-            features={shapFeatures}
-            baseValue={shapData?.base_value}
-            projectId={projectId}
+            positiveFactors={shapData?.top_risk_increasing_factors || []}
+            negativeFactors={shapData?.top_risk_reducing_factors || []}
           />
         </div>
 
@@ -283,7 +279,7 @@ export default function ProjectDetails() {
 
           <RecommendationCard
             projectId={projectId}
-            initialRecommendations={recommendations}
+            recommendations={recommendations}
             riskLevel={project.risk_category}
           />
         </div>
@@ -333,9 +329,9 @@ export default function ProjectDetails() {
           <div>
             <RiskMap
               projects={[project]}
-              selectedState={project.state_std || project.state}
-              height="280px"
+              height="320px"
               showControls={false}
+              showLegend={false}
             />
           </div>
         </div>

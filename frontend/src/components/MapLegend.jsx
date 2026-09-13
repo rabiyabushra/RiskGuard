@@ -3,9 +3,10 @@ import { riskColors } from '@gis/maps/riskColors';
 
 export default function MapLegend() {
   const legendItems = [
-    { label: 'High Risk (Score ≥ 65)', color: riskColors.high, desc: 'Critical delay trajectory' },
-    { label: 'Medium Risk (35 ≤ Score < 65)', color: riskColors.medium, desc: 'Watchlist / elevated risk' },
-    { label: 'Low Risk (Score < 35)', color: riskColors.low, desc: 'On-track execution' },
+    { label: 'Critical', range: '80-100%', color: riskColors.critical, desc: 'Immediate intervention' },
+    { label: 'High', range: '60-79%', color: riskColors.high, desc: 'Priority delay trajectory' },
+    { label: 'Medium', range: '30-59%', color: riskColors.medium, desc: 'Watchlist / elevated risk' },
+    { label: 'Low', range: '0-29%', color: riskColors.low, desc: 'On-track execution' },
   ];
 
   return (
@@ -22,7 +23,10 @@ export default function MapLegend() {
               style={{ backgroundColor: item.color }}
             />
             <div className="flex-1">
-              <p className="font-medium text-slate-200">{item.label}</p>
+              <p className="font-medium text-slate-200 flex items-center justify-between gap-4">
+                <span>{item.label}</span>
+                <span className="font-mono text-slate-400">{item.range}</span>
+              </p>
               <p className="text-[10px] text-slate-400">{item.desc}</p>
             </div>
           </div>

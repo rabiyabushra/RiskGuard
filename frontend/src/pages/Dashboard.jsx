@@ -80,7 +80,7 @@ export default function Dashboard() {
 
       sumRisk += Number(p.risk_score || 50);
       sumDelayProb += Number(p.delay_probability || 0.5);
-      sumCost += Number(p.cost_revised || p.cost_original || 0);
+      sumCost += Number(p.revised_cost || p.original_cost || 0);
     });
 
     return {

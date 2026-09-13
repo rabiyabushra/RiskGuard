@@ -1,43 +1,86 @@
 import React, { useState, useMemo, useRef } from 'react';
-import { MapContainer, TileLayer, GeoJSON, Marker, Popup, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON, Marker, Popup, Polygon, Pane, Tooltip, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Filter, RotateCcw, Layers } from 'lucide-react';
 
 import { mapConfig, tileConfig } from '@gis/maps/mapConfig';
 import { riskColors } from '@gis/maps/riskColors';
-import { getRiskColor } from '@gis/maps/mapUtils';
+import { createOutsideIndiaMask, getRiskColor, getProjectProbability, getProjectRiskCategory, getRiskPercentage } from '@gis/maps/mapUtils';
 import indiaGeoData from '@gis/geojson/india.json';
 import statesGeoData from '@gis/geojson/states.json';
+import districtsGeoData from '@gis/geojson/districts.json';
 
 import { STATE_CENTROIDS, normalizeStateName, formatCurrency } from '../utils/riskUtils';
 import MapLegend from './MapLegend';
 import RiskBadge from './RiskBadge';
 
 // Helper component to programmatic flyTo when state selection changes
-function MapController({ center, zoom }) {
+const indiaBounds = L.geoJSON(indiaGeoData).getBounds();
+const indiaMaxBounds = indiaBounds.pad(0.2);
+
+function getStateBounds(stateName) {
+  const normalizedName = canonicalStateName(stateName);
+  const features = indiaGeoData.features.filter((feature) => {
+    const featureName = feature.properties?.st_nm || feature.properties?.ST_NM || '';
+    return canonicalStateName(featureName) === normalizedName;
+  });
+  return features.length ? L.geoJSON({ type: 'FeatureCollection', features }).getBounds() : null;
+}
+
+function canonicalStateName(stateName) {
+  return normalizeStateName(stateName).toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]/g, '');
+}
+
+function MapController({ center, zoom, selectedState, indiaLayerRef }) {
+  const map = useMap();
+  const lastView = React.useRef(null);
+  React.useEffect(() => {
+    const viewKey = selectedState || 'INDIA';
+    if (lastView.current === viewKey || !indiaLayerRef.current) return;
+
+    if (selectedState) {
+      const stateBounds = getStateBounds(selectedState);
+      if (stateBounds?.isValid()) {
+        map.fitBounds(stateBounds, { padding: [24, 24], maxZoom: zoom });
+      } else if (center) {
+        map.flyTo(center, zoom, { duration: 1.2 });
+      }
+    } else {
+      const bounds = indiaLayerRef.current.getBounds();
+      if (!bounds.isValid()) return;
+      map.fitBounds(bounds, { padding: [30, 30] });
+      map.setMaxBounds(bounds.pad(0.2));
+    }
+    lastView.current = viewKey;
+  }, [center, zoom, map, selectedState, indiaLayerRef]);
+  return null;
+}
+
+function ZoomTracker({ onZoomChange }) {
   const map = useMap();
   React.useEffect(() => {
-    if (center) {
-      map.flyTo(center, zoom, { duration: 1.2 });
-    }
-  }, [center, zoom, map]);
+    const updateZoom = () => onZoomChange(map.getZoom());
+    updateZoom();
+    map.on('zoomend', updateZoom);
+    return () => map.off('zoomend', updateZoom);
+  }, [map, onZoomChange]);
   return null;
 }
 
 // Create custom SVG Leaflet divIcon for project markers
-function createCustomPin(riskCategory, count = 1) {
+function createCustomPin(riskCategory) {
   const cat = String(riskCategory || 'MEDIUM').toLowerCase();
   const color = riskColors[cat] || riskColors.medium;
-  const isHigh = cat === 'high' || cat === 'critical';
+  const isCritical = cat === 'critical';
+  const size = cat === 'critical' ? 18 : cat === 'high' ? 16 : cat === 'medium' ? 14 : 12;
 
   return L.divIcon({
     className: 'custom-map-pin',
     html: `
       <div style="position: relative; display: flex; align-items: center; justify-content: center;">
-        ${isHigh ? `<div style="position: absolute; width: 26px; height: 26px; border-radius: 9999px; background-color: ${color}; opacity: 0.4; animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;"></div>` : ''}
-        <div style="width: 18px; height: 18px; border-radius: 9999px; background-color: ${color}; border: 2px solid #ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); display: flex; align-items: center; justify-content: center;">
-          ${count > 1 ? `<span style="font-size: 9px; font-weight: 700; color: #ffffff;">${count}</span>` : ''}
+        ${isCritical ? `<div style="position: absolute; width: ${size + 8}px; height: ${size + 8}px; border-radius: 9999px; background-color: ${color}; opacity: 0.28;"></div>` : ''}
+        <div style="width: ${size}px; height: ${size}px; border-radius: 9999px; background-color: ${color}; border: 1.5px solid #f8fafc; box-shadow: 0 0 ${isCritical ? 10 : 6}px ${color}; display: flex; align-items: center; justify-content: center;">
         </div>
       </div>
     `,
@@ -52,13 +95,17 @@ export default function RiskMap({
   selectedState = '',
   onStateSelect = null,
   height = '560px',
-  showControls = true
+  showControls = true,
+  showLegend = true
 }) {
   const [filterRisk, setFilterRisk] = useState('ALL');
   const [showChoropleth, setShowChoropleth] = useState(true);
   const [showMarkers, setShowMarkers] = useState(true);
   const [mapCenter, setMapCenter] = useState(mapConfig.center);
   const [mapZoom, setMapZoom] = useState(mapConfig.zoom);
+  const [currentZoom, setCurrentZoom] = useState(mapConfig.zoom);
+  const indiaLayerRef = useRef(null);
+  const outsideIndiaMask = useMemo(() => createOutsideIndiaMask(indiaGeoData), []);
 
   // 1. Calculate state-level risk aggregations from actual project data
   const stateStats = useMemo(() => {
@@ -76,8 +123,9 @@ export default function RiskMap({
         };
       }
       stats[stateName].total += 1;
-      stats[stateName].totalScore += Number(p.risk_score || 50);
-      const cat = (p.risk_category || '').toUpperCase();
+      const probability = getProjectProbability(p);
+      stats[stateName].totalScore += probability === null ? Number(p.risk_score || 50) : probability * 100;
+      const cat = getProjectRiskCategory(p);
       if (cat === 'HIGH' || cat === 'CRITICAL') stats[stateName].highRisk += 1;
       else if (cat === 'LOW') stats[stateName].lowRisk += 1;
       else stats[stateName].mediumRisk += 1;
@@ -95,8 +143,8 @@ export default function RiskMap({
   // 2. Filter projects for markers based on risk level and selected state
   const filteredProjects = useMemo(() => {
     return projects.filter((p) => {
-      const matchesState = !selectedState || normalizeStateName(p.state_std || p.state) === normalizeStateName(selectedState);
-      const cat = (p.risk_category || '').toUpperCase();
+      const matchesState = !selectedState || canonicalStateName(p.state_std || p.state) === canonicalStateName(selectedState);
+      const cat = getProjectRiskCategory(p);
       const matchesRisk = filterRisk === 'ALL' || cat === filterRisk;
       return matchesState && matchesRisk;
     });
@@ -134,19 +182,17 @@ export default function RiskMap({
   // 4. Handle State Polygon Styling (Choropleth based on average risk)
   const getFeatureStyle = (feature) => {
     const stName = normalizeStateName(feature.properties?.st_nm || feature.properties?.ST_NM || '');
-    const data = stateStats[stName];
+    const data = Object.entries(stateStats).find(([name]) => canonicalStateName(name) === canonicalStateName(stName))?.[1];
 
     let fillColor = '#334155'; // default slate if no projects
     let fillOpacity = 0.25;
 
     if (data && data.total > 0) {
-      if (data.avgRisk >= 65) fillColor = riskColors.high;
-      else if (data.avgRisk >= 35) fillColor = riskColors.medium;
-      else fillColor = riskColors.low;
-      fillOpacity = 0.45;
+      fillColor = getRiskColor(data.avgRisk);
+      fillOpacity = data.avgRisk >= 80 ? 0.70 : 0.65;
     }
 
-    if (selectedState && normalizeStateName(selectedState) === stName) {
+    if (selectedState && canonicalStateName(selectedState) === canonicalStateName(stName)) {
       fillOpacity = 0.75;
       return {
         fillColor,
@@ -159,16 +205,16 @@ export default function RiskMap({
 
     return {
       fillColor,
-      weight: 1.2,
-      opacity: 0.8,
-      color: '#475569',
+      weight: 1,
+      opacity: 0.95,
+      color: '#94a3b8',
       fillOpacity: showChoropleth ? fillOpacity : 0.1,
     };
   };
 
   const onEachFeature = (feature, layer) => {
     const stName = normalizeStateName(feature.properties?.st_nm || feature.properties?.ST_NM || '');
-    const data = stateStats[stName];
+    const data = Object.entries(stateStats).find(([name]) => canonicalStateName(name) === canonicalStateName(stName))?.[1];
 
     if (data && data.total > 0) {
       layer.bindTooltip(
@@ -185,6 +231,10 @@ export default function RiskMap({
     } else {
       layer.bindTooltip(`<strong>${stName}</strong><br/><span style="color:#94a3b8;">No tracked projects</span>`, { sticky: true });
     }
+    const riskLevel = data ? (data.avgRisk >= 80 ? 'CRITICAL' : data.avgRisk >= 60 ? 'HIGH' : data.avgRisk >= 30 ? 'MEDIUM' : 'LOW') : 'N/A';
+    layer.bindPopup(data
+      ? `<strong>Region: ${stName}</strong><br/>Risk Score: ${data.avgRisk.toFixed(1)} / 100<br/>Risk Level: ${riskLevel}<br/>Projects: ${data.total}<br/>High Risk Projects: ${data.highRisk}`
+      : `<strong>Region: ${stName}</strong><br/>No tracked project risk data`);
 
     layer.on({
       click: () => {
@@ -216,6 +266,7 @@ export default function RiskMap({
   };
 
   const uniqueStates = Object.keys(stateStats).sort();
+  const showDistricts = showChoropleth && currentZoom >= 7;
 
   return (
     <div className="relative rounded-xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-950" style={{ height }}>
@@ -251,7 +302,7 @@ export default function RiskMap({
 
           {/* Risk Filter */}
           <div className="flex items-center space-x-1 bg-slate-800/80 p-0.5 rounded-lg border border-slate-700">
-            {['ALL', 'HIGH', 'MEDIUM', 'LOW'].map((lvl) => (
+            {['ALL', 'CRITICAL', 'HIGH', 'MEDIUM', 'LOW'].map((lvl) => (
               <button
                 key={lvl}
                 onClick={() => setFilterRisk(lvl)}
@@ -289,9 +340,11 @@ export default function RiskMap({
       )}
 
       {/* Floating Map Legend */}
-      <div className="absolute bottom-4 right-4 z-[1000]">
-        <MapLegend />
-      </div>
+      {showLegend && (
+        <div className="absolute bottom-4 right-4 z-[1000]">
+          <MapLegend />
+        </div>
+      )}
 
       {/* Primary Leaflet Map Container */}
       <MapContainer
@@ -299,11 +352,14 @@ export default function RiskMap({
         zoom={mapConfig.zoom}
         minZoom={mapConfig.minZoom}
         maxZoom={mapConfig.maxZoom}
+        maxBounds={indiaMaxBounds}
+        maxBoundsViscosity={0.85}
         scrollWheelZoom={mapConfig.scrollWheelZoom}
         zoomControl={mapConfig.zoomControl}
         style={{ height: '100%', width: '100%' }}
       >
-        <MapController center={mapCenter} zoom={mapZoom} />
+        <MapController center={mapCenter} zoom={mapZoom} selectedState={selectedState} indiaLayerRef={indiaLayerRef} />
+        <ZoomTracker onZoomChange={setCurrentZoom} />
 
         {/* OpenStreetMap Tiles */}
         <TileLayer
@@ -312,9 +368,17 @@ export default function RiskMap({
           maxZoom={tileConfig.maxZoom}
         />
 
+        <Pane name="outsideIndiaMask" style={{ zIndex: 300 }}>
+          <Polygon
+            positions={outsideIndiaMask}
+            pathOptions={{ color: '#020617', weight: 0, fillColor: '#020617', fillOpacity: 0.9, fillRule: 'evenodd' }}
+          />
+        </Pane>
+
         {/* State Boundary GeoJSON Choropleth */}
         {showChoropleth && (
           <GeoJSON
+            ref={indiaLayerRef}
             key={`geojson-states-${selectedState}-${showChoropleth}`}
             data={indiaGeoData}
             style={getFeatureStyle}
@@ -322,21 +386,37 @@ export default function RiskMap({
           />
         )}
 
+        {showDistricts && (
+          <GeoJSON
+            key={`geojson-districts-${selectedState}-${showDistricts}`}
+            data={districtsGeoData}
+            style={{ color: '#475569', weight: 0.6, opacity: 0.72, fillOpacity: 0 }}
+            onEachFeature={(feature, layer) => {
+              const districtName = feature.properties?.district || feature.properties?.DISTRICT || 'District';
+              layer.bindPopup(`<strong>District</strong><br/>${districtName}`);
+            }}
+          />
+        )}
+
         {/* Interactive Project Markers */}
-        {showMarkers &&
+        {showMarkers && (
           markerPositions.slice(0, 150).map(({ project, position }, idx) => {
-            const cat = String(project.risk_category || 'MEDIUM').toUpperCase();
+            const cat = getProjectRiskCategory(project);
+            const riskPercentage = getRiskPercentage(project);
             return (
               <Marker
                 key={`marker-${project.project_id}-${idx}`}
                 position={position}
                 icon={createCustomPin(cat)}
               >
+                <Tooltip direction="top" offset={[0, -8]}>
+                  <span>{project.project_name || 'Unnamed project'}<br />{riskPercentage} • {cat}</span>
+                </Tooltip>
                 <Popup>
                   <div className="p-3.5 max-w-xs space-y-2 text-slate-100">
                     <div className="flex items-center justify-between border-b border-slate-700/80 pb-2">
                       <span className="font-mono text-[11px] text-slate-400">ID: {project.project_id}</span>
-                      <RiskBadge category={project.risk_category} score={project.risk_score} size="sm" />
+                      <RiskBadge category={cat} score={project.risk_score} size="sm" />
                     </div>
 
                     <div>
@@ -355,7 +435,7 @@ export default function RiskMap({
                       <div>
                         <span className="text-slate-400 block text-[10px]">Delay Prob:</span>
                         <span className="font-mono font-bold text-sky-400">
-                          {((project.delay_probability || 0) * 100).toFixed(1)}%
+                          {riskPercentage}
                         </span>
                       </div>
                       <div>
@@ -377,7 +457,8 @@ export default function RiskMap({
                 </Popup>
               </Marker>
             );
-          })}
+          })
+        )}
       </MapContainer>
     </div>
   );

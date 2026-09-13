@@ -188,7 +188,7 @@ export default function ProjectTable({
               <th className="py-3 px-4 min-w-[200px]">Project Name</th>
               <th className="py-3 px-4">State</th>
               <th className="py-3 px-4">Sector</th>
-              <th className="py-3 px-4 cursor-pointer hover:text-slate-200" onClick={() => handleSort('cost_revised')}>
+                <th className="py-3 px-4 cursor-pointer hover:text-slate-200" onClick={() => handleSort('revised_cost')}>
                 <div className="flex items-center space-x-1">
                   <span>Cost</span>
                   <ArrowUpDown className="w-3 h-3 text-slate-500" />
@@ -225,7 +225,7 @@ export default function ProjectTable({
               </tr>
             ) : (
               paginatedProjects.map((p) => {
-                const costVal = p.cost_revised || p.cost_original || 0;
+                const costVal = p.revised_cost || p.original_cost || 0;
                 const progressVal = Number(p.physical_progress || 0);
                 const delayProb = (Number(p.delay_probability || 0) * 100).toFixed(1);
                 const riskScore = Number(p.risk_score || 0).toFixed(1);

@@ -63,7 +63,7 @@ export default function GISMapView() {
       const cat = (p.risk_category || '').toUpperCase();
       if (cat === 'HIGH' || cat === 'CRITICAL') high++;
       sumScore += Number(p.risk_score || 50);
-      sumCost += Number(p.cost_revised || p.cost_original || 0);
+      sumCost += Number(p.revised_cost || p.original_cost || 0);
     });
 
     return {
@@ -205,7 +205,7 @@ export default function GISMapView() {
 
                   <div className="flex items-center justify-between text-[11px] text-slate-400 pt-1 border-t border-slate-900">
                     <span>{p.sector || 'Infrastructure'}</span>
-                    <span className="font-mono text-slate-300">{formatCurrency(p.cost_revised || p.cost_original)}</span>
+                    <span className="font-mono text-slate-300">{formatCurrency(p.revised_cost || p.original_cost)}</span>
                   </div>
 
                   <Link
