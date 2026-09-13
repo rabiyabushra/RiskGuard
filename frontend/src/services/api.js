@@ -55,6 +55,14 @@ export const api = {
     return res.data;
   },
 
+  getCustomRecommendations: async (projectData, customContext = null) => {
+    const res = await apiClient.post('/recommendations', {
+      project_data: projectData,
+      custom_context: customContext,
+    });
+    return res.data;
+  },
+
   // SHAP Explainability
   getProjectExplanation: async (projectId) => {
     const res = await apiClient.get(`/projects/${projectId}/explanation`);
