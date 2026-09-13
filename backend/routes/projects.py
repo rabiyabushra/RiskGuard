@@ -17,7 +17,7 @@ router = APIRouter(prefix="/projects", tags=["Projects"])
 @router.get("", response_model=Dict[str, Any])
 async def list_projects(
     page: int = Query(1, ge=1, description="Page number"),
-    limit: int = Query(20, ge=1, le=100, description="Items per page"),
+    limit: int = Query(20, ge=1, le=2000, description="Items per page"),
     state: Optional[str] = Query(None, description="Filter by state (e.g. 'Gujarat', 'Assam')"),
     sector: Optional[str] = Query(None, description="Filter by sector (e.g. 'Civil Aviation')"),
     risk_category: Optional[str] = Query(None, description="Filter by risk category: LOW, MEDIUM, HIGH")

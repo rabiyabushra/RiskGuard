@@ -8,7 +8,7 @@
 [![Database](https://img.shields.io/badge/Database-MongoDB-green.svg)](https://www.mongodb.com/)
 [![Backend](https://img.shields.io/badge/Backend-FastAPI-teal.svg)](https://fastapi.tiangolo.com/)
 [![Frontend](https://img.shields.io/badge/Frontend-React%20%2B%20TailwindCSS-cyan.svg)](https://react.dev/)
-[![Tests](https://img.shields.io/badge/tests-10%2F10%20passing-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/tests-21%2F21%20passing-brightgreen.svg)](tests/)
 
 ---
 
@@ -328,7 +328,21 @@ jupyter notebook notebooks/
 ```
 - `01_data_exploration.ipynb`: Exploratory data analysis across all 6 raw sources.
 - `05_model_training.ipynb`: Multi-model hyperparameter tuning and cross-validation.
-- `06_model_explainability.ipynb`: Interactive SHAP beeswarm plots and waterfall charts.
+### 6. Start RiskGuard Backend (FastAPI)
+```bash
+# Start backend on port 8000
+uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+# Interactive API docs available at: http://localhost:8000/docs
+```
+
+### 7. Start RiskGuard Frontend (React + Vite + Tailwind + Leaflet)
+```bash
+# Navigate to frontend and start dev server
+cd frontend
+npm install
+npm run dev
+# Dashboard accessible at: http://localhost:3000
+```
 
 ---
 
@@ -338,8 +352,8 @@ jupyter notebook notebooks/
 - [x] **Phase 2 (Pair 1)**: MongoDB Schema Design & Geographic Harmonization.
 - [x] **Phase 3 (Pair 2)**: ML Pipeline, Multi-Model Tuning, Evaluation & Champion Selection (`XGBoost`).
 - [x] **Phase 4 (Pair 2)**: Risk Scoring, Threshold Calibration, SHAP TreeExplainer & Narrative Generation.
-- [ ] **Phase 5 (Pair 3)**: FastAPI REST Endpoints, MongoDB Atlas Ingestion & Gemini API Recommendations.
-- [ ] **Phase 6 (Pair 3)**: React Dashboard, Tailwind UI, Leaflet GIS Map Visualization & Docker Deployment.
+- [x] **Phase 5 (Pair 3)**: FastAPI REST Endpoints, MongoDB Atlas Ingestion & Gemini API Recommendations.
+- [x] **Phase 6 (Pair 3)**: React Dashboard, Tailwind UI, Leaflet GIS Map Visualization & What-If Scenario Lab.
 
 ---
 
