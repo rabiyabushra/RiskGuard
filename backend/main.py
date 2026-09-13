@@ -1,165 +1,114 @@
 """
-RiskGuard Backend - FastAPI Application
-Member 5's responsibility: Backend & Gemini Integration
-
-This is the entry point for the backend server. It:
-- Serves REST APIs for the frontend
-- Connects to MongoDB to read/write project data
-- Will later integrate the ML model (from Pair 2) and Gemini API for recommendations
+RiskGuard API — Core Application Entrypoint.
+AI-Powered Infrastructure Project Delay Prediction and Risk Assessment System.
 """
 
-from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-from typing import Optional
 import os
-import google.generativeai as genai
+import sys
+from contextlib import asynccontextmanager
 
-from database import connect_to_mongo, close_mongo_connection, get_database
+# Ensure repository root is on sys.path regardless of launch directory
+BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(BACKEND_DIR, ".."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
-# ---------------------------------------------------------
-# App setup
-# ---------------------------------------------------------
-app = FastAPI(
-    title="RiskGuard API",
-    description="AI-Powered Infrastructure Project Delay Prediction and Risk Assessment System",
-    version="0.1.0",
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+from backend.database import connect_to_mongo, close_mongo_connection, is_mongo_connected
+from backend.models_loader import get_model, get_preprocessor, get_explainer
+from backend.routes import (
+    projects,
+    prediction,
+    risk,
+    shap,
+    recommendations
 )
 
-# Allow the React frontend (running on a different port) to call this API
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Handles startup initialization and shutdown resource cleanup."""
+    print("[Startup] Initializing RiskGuard backend services...")
+    # 1. Connect to MongoDB
+    await connect_to_mongo()
+
+    # 2. Warm up model and preprocessing artifacts
+    try:
+        get_model()
+        get_preprocessor()
+        print("[Startup] Machine learning models and preprocessor warmed up successfully.")
+    except Exception as e:
+        print(f"[Startup] Warning: Could not warm up ML models: {e}")
+
+    yield
+
+    # Shutdown
+    print("[Shutdown] Releasing database connections...")
+    await close_mongo_connection()
+
+
+app = FastAPI(
+    title="RiskGuard API",
+    description="Intelligent Infrastructure Delay Risk Assessment, SHAP Explainability & Mitigation Platform",
+    version="1.0.0",
+    lifespan=lifespan
+)
+
+# CORS configuration allowing local development with React / Leaflet UI
+cors_origins_env = os.getenv("CORS_ORIGINS", "*")
+origins = [o.strip() for o in cors_origins_env.split(",") if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace "*" with your frontend's actual URL
+    allow_origins=origins if origins != ["*"] else ["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-
-# ---------------------------------------------------------
-# Startup / Shutdown events - connect to MongoDB
-# ---------------------------------------------------------
-@app.on_event("startup")
-async def startup_db_client():
-    await connect_to_mongo()
-
-
-@app.on_event("shutdown")
-async def shutdown_db_client():
-    await close_mongo_connection()
+# Register modular routers
+app.include_router(projects.router)
+app.include_router(prediction.router)
+app.include_router(risk.router)
+app.include_router(shap.router)
+app.include_router(recommendations.router)
 
 
-# ---------------------------------------------------------
-# Basic health-check endpoints
-# ---------------------------------------------------------
-@app.get("/")
+@app.get("/", tags=["System"])
 async def root():
-    """Simple endpoint to confirm the API is running."""
-    return {"message": "RiskGuard API is running", "status": "ok"}
-
-
-@app.get("/health")
-async def health_check():
-    """Used to verify the server + DB connection are alive."""
-    db = get_database()
-    db_status = "connected" if db is not None else "not connected"
-    return {"status": "ok", "database": db_status}
-
-
-# ---------------------------------------------------------
-# Example data model for a project
-# (Coordinate with Member 2 / Pair 1 on the real schema)
-# ---------------------------------------------------------
-class Project(BaseModel):
-    name: str
-    sector: str
-    state: str
-    district: Optional[str] = None
-    cost: Optional[float] = None
-    physical_progress: Optional[float] = None  # percentage
-    planned_completion: Optional[str] = None   # date as string for now
-    revised_completion: Optional[str] = None
-
-
-# ---------------------------------------------------------
-# Project endpoints (talks to MongoDB)
-# ---------------------------------------------------------
-@app.get("/projects")
-async def list_projects(limit: int = 20):
-    """Return a list of projects stored in MongoDB."""
-    db = get_database()
-    if db is None:
-        raise HTTPException(status_code=503, detail="Database not connected")
-
-    projects_cursor = db["projects"].find().limit(limit)
-    projects = []
-    async for doc in projects_cursor:
-        doc["_id"] = str(doc["_id"])  # convert ObjectId to string for JSON
-        projects.append(doc)
-    return {"count": len(projects), "projects": projects}
-
-
-@app.post("/projects")
-async def create_project(project: Project):
-    """Add a new project to MongoDB."""
-    db = get_database()
-    if db is None:
-        raise HTTPException(status_code=503, detail="Database not connected")
-
-    result = await db["projects"].insert_one(project.dict())
-    return {"message": "Project created", "id": str(result.inserted_id)}
-
-
-# ---------------------------------------------------------
-# Placeholder for ML prediction endpoint
-# (To be filled in once Member 3's trained model is available)
-# ---------------------------------------------------------
-@app.post("/predict")
-async def predict_delay(project: Project):
-    """
-    Placeholder endpoint: will eventually load the trained model
-    (from Pair 2) and return a delay probability + risk category.
-    """
-    # TODO: Replace this dummy logic with the real model prediction
-    dummy_probability = 0.42
-    dummy_risk = "Medium"
-
+    """Service status confirmation and API overview."""
     return {
-        "project_name": project.name,
-        "delay_probability": dummy_probability,
-        "risk_category": dummy_risk,
-        "note": "This is placeholder logic. Real model integration pending from Pair 2.",
+        "service": "RiskGuard API",
+        "version": "1.0.0",
+        "status": "online",
+        "documentation": "/docs",
+        "modules": [
+            "projects",
+            "prediction",
+            "risk-analysis",
+            "shap-explainability",
+            "gemini-recommendations"
+        ]
     }
 
 
-# ---------------------------------------------------------
-# Gemini recommendation endpoint
-# ---------------------------------------------------------
-@app.post("/recommendations")
-async def get_recommendations(project: Project):
-    """
-    Calls the Gemini API with project details to generate a
-    plain-English recommendation to reduce delay risk.
-    """
-    gemini_api_key = os.getenv("GEMINI_API_KEY")
-    if not gemini_api_key:
-        return {
-            "note": "GEMINI_API_KEY not set yet. Add it to your .env file to enable real recommendations.",
-        }
+@app.get("/health", tags=["System"])
+async def health_check():
+    """Live health status of API and attached MongoDB instance."""
+    mongo_status = "connected" if is_mongo_connected() else "offline (memory/file fallback active)"
+    return {
+        "status": "healthy",
+        "database": mongo_status,
+        "model_loaded": get_model() is not None,
+        "preprocessor_loaded": get_preprocessor() is not None
+    }
 
-    genai.configure(api_key=gemini_api_key)
-    model = genai.GenerativeModel("gemini-3.6-flash")
 
-    prompt = (
-        f"You are an infrastructure project risk advisor. "
-        f"Project name: {project.name}. Sector: {project.sector}. "
-        f"State: {project.state}. District: {project.district}. "
-        f"Give 2-3 short, actionable recommendations to reduce the risk of delay "
-        f"for this project, in plain language."
-    )
-
-    try:
-        response = model.generate_content(prompt)
-        return {"project_name": project.name, "recommendation": response.text}
-    except Exception as e:
-        return {"error": f"Gemini API call failed: {str(e)}"}
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.getenv("PORT", 8000))
+    host = os.getenv("HOST", "0.0.0.0")
+    print(f"Starting RiskGuard API on http://{host}:{port}")
+    uvicorn.run("backend.main:app", host=host, port=port, reload=True)
