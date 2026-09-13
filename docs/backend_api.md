@@ -44,7 +44,7 @@ MONGO_URI=mongodb://localhost:27017
 DATABASE_NAME=riskguard_db
 
 # Google Gemini API
-GEMINI_API_KEY=AIzaSy...your_gemini_api_key...
+GEMINI_API_KEY=your_gemini_api_key_here
 
 # Server Settings
 PORT=8000

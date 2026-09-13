@@ -14,7 +14,7 @@ All models were tuned via 5-fold cross-validation exclusively on the training pa
 |---|---|---|---|---|---|
 | **Logistic Regression (Baseline)** | 0.7969 | 0.8108 | 0.8750 | 0.8417 | 0.8641 |
 | **Random Forest (Tuned)** | 0.7995 | 0.8022 | 0.8958 | 0.8465 | 0.8785 |
-| **XGBoost (Champion)** | **0.8123** | **0.8249** | **0.8833** | **0.8531** | **0.8924** |
+| **XGBoost (Champion)** | **0.8278** | **0.8419** | **0.8875** | **0.8641** | **0.8913** |
 
 ---
 
@@ -24,10 +24,10 @@ All models were tuned via 5-fold cross-validation exclusively on the training pa
 **Artifact:** `models/best_model.pkl`
 
 ### Key Selection Drivers:
-1. **Superior Discriminative Capability (ROC-AUC: 0.8924)**:  
+1. **Superior Discriminative Capability (ROC-AUC: 0.8913)**:  
    XGBoost demonstrates the highest area under the receiver operating characteristic curve, outperforming tuned Random Forest (0.8785) and Logistic Regression (0.8641). This guarantees optimal probability ranking across varying risk thresholds.
-2. **Balanced Recall & Precision (F1: 0.8531)**:  
-   Detects delayed infrastructure projects with high sensitivity (88.3% recall) while minimizing false alarms (82.5% precision).
+2. **Balanced Recall & Precision (F1: 0.8641)**:  
+   Detects delayed infrastructure projects with high sensitivity (88.8% recall) while minimizing false alarms (84.2% precision).
 3. **Handling Non-Linear Interactions**:  
    Gradient boosting effectively models compound interactions between project duration, cost overruns, state judicial pendency, and regional power deficits.
 

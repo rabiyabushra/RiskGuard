@@ -8,7 +8,7 @@
 [![Database](https://img.shields.io/badge/Database-MongoDB-green.svg)](https://www.mongodb.com/)
 [![Backend](https://img.shields.io/badge/Backend-FastAPI-teal.svg)](https://fastapi.tiangolo.com/)
 [![Frontend](https://img.shields.io/badge/Frontend-React%20%2B%20TailwindCSS-cyan.svg)](https://react.dev/)
-[![Tests](https://img.shields.io/badge/tests-21%2F21%20passing-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/tests-local%20suite-blue.svg)](tests/)
 
 ---
 
@@ -43,7 +43,7 @@ flowchart TD
     end
 
     subgraph Backend_ML ["3. AI/ML & Explainability Core"]
-        M1["Champion XGBoost Model<br/>(ROC-AUC: 0.8924 | F1: 0.8531)"]
+        M1["Champion XGBoost Model<br/>(ROC-AUC: 0.8913 | F1: 0.8641)"]
         M2["Delay Probability &<br/>Calibrated Risk Scoring (0-100)"]
         M3["SHAP TreeExplainer Engine<br/>(Global & Local Attribution)"]
     end
@@ -122,7 +122,7 @@ The RiskGuard engineering workflow is structured into 3 collaborative pairs acro
   - Defined the binary classification target (`target_delayed`: schedule slippage > 0 days).
   - Built stratified train/test partitions ($N=1,552$ train, $N=389$ test).
   - Trained, cross-validated, and fine-tuned **Logistic Regression**, **Random Forest**, and **XGBoost**.
-  - Benchmarked models and selected `XGBoostClassifier` as the production champion (ROC-AUC: 0.8924).
+  - Benchmarked models and selected `XGBoostClassifier` as the production champion (ROC-AUC: 0.8913).
 - **Member 4 — Risk Analysis & SHAP**:
   - Built the calibrated risk-scoring engine ($0 - 100$) and defined operational risk boundaries (`LOW`, `MEDIUM`, `HIGH`).
   - Integrated `shap.TreeExplainer` with verified local additivity ($E[f(x)] = 0.4799$).
@@ -149,11 +149,11 @@ All models were tuned via 5-fold cross-validation on the training set and evalua
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
 | **Logistic Regression** | 79.69% | 0.8108 | 0.8750 | 0.8417 | 0.8641 | Linear Baseline |
 | **Random Forest** | 79.95% | 0.8022 | **0.8958** | 0.8465 | 0.8785 | Non-linear Candidate |
-| **XGBoost (Champion)** | **81.23%** | **0.8249** | 0.8833 | **0.8531** | **0.8924** | 🏆 **Production Model** |
+| **XGBoost (Champion)** | **82.78%** | **0.8419** | 0.8875 | **0.8641** | **0.8913** | 🏆 **Production Model** |
 
 ### Why XGBoost Won:
-- **Peak Discriminative Power**: ROC-AUC of **0.8924** indicates superior ranking capability across decision thresholds.
-- **Balanced Sensitivity**: High recall (88.33%) ensures delayed projects are flagged early without incurring excessive false alarms (precision: 82.49%).
+- **Peak Discriminative Power**: ROC-AUC of **0.8913** indicates superior ranking capability across decision thresholds.
+- **Balanced Sensitivity**: High recall (88.75%) ensures delayed projects are flagged early without incurring excessive false alarms (precision: 84.19%).
 - **Non-Linear Interaction Modeling**: Accurately maps complex cross-domain couplings between judicial backlog, power deficits, and expenditure spikes.
 
 ---
@@ -342,6 +342,38 @@ cd frontend
 npm install
 npm run dev
 # Dashboard accessible at: http://localhost:3000
+```
+
+### 8. Run with Docker Compose
+Docker Desktop with the Linux engine and Docker Compose v2 are required.
+
+```bash
+copy .env.example .env
+# Set GEMINI_API_KEY in .env only when live Gemini recommendations are needed.
+docker compose config
+docker compose up --build
+```
+
+The Docker services are:
+
+| Service | URL / Port | Purpose |
+|:---|:---|:---|
+| `frontend` | http://localhost:3000 | Vite production build served by Nginx |
+| `backend` | http://localhost:8000 | FastAPI and ML services |
+| `mongodb` | internal `mongodb:27017` | Persistent MongoDB database |
+
+Swagger is available at http://localhost:8000/docs. MongoDB data is stored in the named `mongodb_data` volume.
+
+The backend image copies existing `models/` artifacts when available. On a clean checkout without ignored artifacts, it runs the existing preprocessing and training scripts once during image build; container startup only loads the persisted model.
+
+Useful commands:
+
+```bash
+docker compose ps
+docker compose logs -f backend
+docker compose logs -f frontend
+docker compose logs -f mongodb
+docker compose down
 ```
 
 ---
