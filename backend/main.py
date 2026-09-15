@@ -13,8 +13,9 @@ PROJECT_ROOT = os.path.abspath(os.path.join(BACKEND_DIR, ".."))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 
 from backend.database import connect_to_mongo, close_mongo_connection, is_mongo_connected
 from backend.models_loader import get_model, get_preprocessor, get_explainer
@@ -57,16 +58,29 @@ app = FastAPI(
 )
 
 # CORS configuration allowing local development with React / Leaflet UI
-cors_origins_env = os.getenv("CORS_ORIGINS", "http://localhost:3000,http://localhost:5173")
+cors_origins_env = os.getenv(
+    "CORS_ORIGINS",
+    "http://localhost:3000,http://localhost:5173,http://127.0.0.1:3000,http://127.0.0.1:5173"
+)
 origins = [o.strip() for o in cors_origins_env.split(",") if o.strip()]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins if origins != ["*"] else ["*"],
+    allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1)(:\d+)?$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.exception_handler(Exception)
+async def unhandled_exception_handler(request: Request, exc: Exception):
+    """Ensure any unhandled exception returns a valid JSON response with CORS headers intact."""
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Internal Server Error", "error": str(exc)},
+    )
 
 # Register modular routers
 app.include_router(projects.router)
@@ -98,11 +112,23 @@ async def root():
 async def health_check():
     """Live health status of API and attached MongoDB instance."""
     mongo_status = "connected" if is_mongo_connected() else "offline (memory/file fallback active)"
+    model_loaded = False
+    preprocessor_loaded = False
+    try:
+        model_loaded = get_model() is not None
+    except Exception:
+        model_loaded = False
+    try:
+        preprocessor_loaded = get_preprocessor() is not None
+    except Exception:
+        preprocessor_loaded = False
+
+    is_healthy = model_loaded and preprocessor_loaded
     return {
-        "status": "healthy",
+        "status": "healthy" if is_healthy else "degraded",
         "database": mongo_status,
-        "model_loaded": get_model() is not None,
-        "preprocessor_loaded": get_preprocessor() is not None
+        "model_loaded": model_loaded,
+        "preprocessor_loaded": preprocessor_loaded
     }
 
 

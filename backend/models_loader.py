@@ -36,7 +36,14 @@ def get_model():
     if _MODEL is None:
         model_path = os.path.join(PROJECT_ROOT, "models", "best_model.pkl")
         if not os.path.exists(model_path):
-            raise FileNotFoundError(f"Model file not found at: {model_path}")
+            # Check fallback model artifacts
+            for alt_name in ["xgboost.pkl", "random_forest.pkl", "logistic_regression.pkl"]:
+                alt_path = os.path.join(PROJECT_ROOT, "models", alt_name)
+                if os.path.exists(alt_path):
+                    model_path = alt_path
+                    break
+            else:
+                raise FileNotFoundError(f"Model file not found at: {model_path}")
         _MODEL = joblib.load(model_path)
     return _MODEL
 
@@ -47,7 +54,11 @@ def get_preprocessor():
     if _PREPROCESSOR is None:
         prep_path = os.path.join(PROJECT_ROOT, "models", "preprocessor.pkl")
         if not os.path.exists(prep_path):
-            raise FileNotFoundError(f"Preprocessor file not found at: {prep_path}")
+            alt_joblib = os.path.join(PROJECT_ROOT, "models", "preprocessor.joblib")
+            if os.path.exists(alt_joblib):
+                prep_path = alt_joblib
+            else:
+                raise FileNotFoundError(f"Preprocessor file not found at: {prep_path}")
         _PREPROCESSOR = joblib.load(prep_path)
     return _PREPROCESSOR
 

@@ -1,5 +1,43 @@
 import React from 'react';
-import { Sparkles, CheckCircle2, AlertTriangle, RefreshCw } from 'lucide-react';
+import { Sparkles, CheckCircle2, AlertTriangle, RefreshCw, Compass } from 'lucide-react';
+
+function renderFormattedRecommendation(recText) {
+  if (!recText || typeof recText !== 'string') return recText;
+
+  // Match "**Action Title**: Description" or "**Action Title** - Description"
+  const boldMatch = recText.match(/^\s*\*\*(.*?)\*\*[:\-]?\s*(.*)$/s);
+  if (boldMatch) {
+    const [, title, desc] = boldMatch;
+    return (
+      <div>
+        <span className="font-semibold text-sky-400 block mb-1 text-sm tracking-wide">
+          {title.trim()}
+        </span>
+        <span className="text-slate-200 text-xs sm:text-sm leading-relaxed block">
+          {desc.trim()}
+        </span>
+      </div>
+    );
+  }
+
+  // Match "Action Title: Description"
+  const colonMatch = recText.match(/^([A-Z][A-Za-z0-9\s,&/\-]{2,45}):\s+(.*)$/s);
+  if (colonMatch) {
+    const [, title, desc] = colonMatch;
+    return (
+      <div>
+        <span className="font-semibold text-sky-400 block mb-1 text-sm tracking-wide">
+          {title.trim()}
+        </span>
+        <span className="text-slate-200 text-xs sm:text-sm leading-relaxed block">
+          {desc.trim()}
+        </span>
+      </div>
+    );
+  }
+
+  return <div className="text-xs sm:text-sm text-slate-200 leading-relaxed">{recText}</div>;
+}
 
 export default function RecommendationCard({
   recommendations = [],
@@ -22,8 +60,8 @@ export default function RecommendationCard({
             <Sparkles className="w-5 h-5 text-indigo-400" />
           </div>
           <div>
-            <h3 className="font-semibold text-white text-base">Actionable Risk Mitigation Strategies</h3>
-            <p className="text-xs text-slate-400">Contextual guidance synthesized from ML predictions and SHAP drivers</p>
+            <h3 className="font-semibold text-white text-base">Simplified Risk Mitigation Steps</h3>
+            <p className="text-xs text-slate-400">Easy-to-understand, practical actions to prevent project delays</p>
           </div>
         </div>
 
@@ -35,7 +73,7 @@ export default function RecommendationCard({
                 : 'bg-slate-700 text-slate-300 border-slate-600'
             }`}
           >
-            {isLive ? `Gemini AI (${modelUsed})` : 'Domain Advisory Engine'}
+            {isLive ? `Gemini AI (${modelUsed})` : 'AI Risk Advisor'}
           </span>
 
           {onRefresh && (
@@ -55,9 +93,16 @@ export default function RecommendationCard({
       {recommendations && recommendations.length > 0 ? (
         <ul className="space-y-3.5">
           {recommendations.map((rec, index) => (
-            <li key={index} className="flex items-start space-x-3 bg-slate-800/50 p-3.5 rounded-lg border border-slate-700/40">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-              <div className="text-xs sm:text-sm text-slate-200 leading-relaxed">{rec}</div>
+            <li
+              key={index}
+              className="flex items-start space-x-3 bg-slate-800/50 p-4 rounded-xl border border-slate-700/40 hover:border-slate-600/60 transition-colors"
+            >
+              <div className="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center shrink-0 mt-0.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+              </div>
+              <div className="flex-1 min-w-0">
+                {renderFormattedRecommendation(rec)}
+              </div>
             </li>
           ))}
         </ul>
